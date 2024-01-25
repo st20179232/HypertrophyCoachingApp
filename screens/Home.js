@@ -1,11 +1,13 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import styles from './styles';
+import React from "react";
+import { View, Text } from "react-native";
+import styles from "./styles";
+import NavBar from "./navbar";
 
-export default function Home() {
+export default function App() {
   return (
     <View style={styles.container}>
-      <Text>This is the Home screen</Text>
+      <Text style={styles.defaultFont}>This is the Home screen</Text>
+      <NavBar />
     </View>
   );
 }
