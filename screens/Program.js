@@ -5,7 +5,7 @@ import styles from './styles';
 export default function Program() {
   return (
     <View style={styles.container}>
-      <Text>This is the Program screen</Text>
+      <Text style={styles.defaultFont}>This is the Program screen</Text>
     </View>
   );
 }

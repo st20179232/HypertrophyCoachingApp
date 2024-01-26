@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
-import Home from './screens/Home';
 import * as Font from 'expo-font';
+import { NavigationContainer } from '@react-navigation/native';
+import NavBar from './screens/navbar';
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -24,5 +25,9 @@ export default function App() {
     return null;
   }
 
-  return <Home />;
+  return (
+    <NavigationContainer>
+      <NavBar />
+    </NavigationContainer>
+  );
 }

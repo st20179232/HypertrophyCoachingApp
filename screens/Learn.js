@@ -5,7 +5,7 @@ import styles from './styles';
 export default function Learn() {
   return (
     <View style={styles.container}>
-      <Text>This is the Learn screen</Text>
+      <Text style={styles.defaultFont}>This is the Learn screen</Text>
     </View>
   );
 }

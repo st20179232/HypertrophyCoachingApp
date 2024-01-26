@@ -5,7 +5,7 @@ import styles from './styles';
 export default function Account() {
   return (
     <View style={styles.container}>
-      <Text>This is the Account screen</Text>
+      <Text style={styles.defaultFont}>This is the Account screen</Text>
     </View>
   );
 }
