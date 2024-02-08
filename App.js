@@ -7,7 +7,7 @@ import NavBar from './screens/navbar';
 const fetchFonts = () => {
   return Font.loadAsync({
     'Inter': require('./fonts/Inter.ttf'),
-  });
+  }); 
 };
 
 export default function App() {
