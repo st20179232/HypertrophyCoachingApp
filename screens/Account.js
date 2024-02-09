@@ -119,7 +119,8 @@ const newStyles = StyleSheet.create({
   },
   listTextInput: {
     height: 40,
-    textAlign: 'center',
+    width: '80%',
+    textAlign: 'left',
     fontSize: 20,
   },
   iconList: {
