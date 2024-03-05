@@ -5,24 +5,34 @@ import muscleFront from '../assets/muscleFront.png';
 import muscleBack from '../assets/muscleBack.png';
 import flipButton from '../assets/flipButton.png';
 
-import muscleChest from '../assets/muscleChest.png';
-
 export default function Learn() {
   const [isFront, setIsFront] = useState(true);
-  const [showChest, setShowChest] = useState(false);
 
   const flipImage = () => {
     setIsFront(prevIsFront => !prevIsFront);
   }
 
-  const handleImageClick = () => {
-    setShowChest(true);
+  const handleChestClick = () => {
+    alert('Chest area clicked');
   };
+
+  const handleDeltClick = () => {
+    alert('Delt area clicked');
+  };
+
+  const handleBicepClick = () => {
+    alert('Bicep area clicked');
+  };
+
 
   return (
     <View style={styles.container}>
       <Image source={isFront ? muscleFront : muscleBack} style={styles.chart} />
-      <TouchableOpacity style={styles.chestImage} onPress={handleImageClick} />
+      <TouchableOpacity style={styles.chestArea} onPress={handleChestClick} />
+      <TouchableOpacity style={styles.deltArea1} onPress={handleDeltClick} />
+      <TouchableOpacity style={styles.deltArea2} onPress={handleDeltClick} />
+      <TouchableOpacity style={styles.bicepArea1} onPress={handleBicepClick} />
+      <TouchableOpacity style={styles.bicepArea2} onPress={handleBicepClick} />
       <TouchableOpacity style={styles.flipButtonContainer} onPress={flipImage}>
         <Image source={flipButton} style={styles.flipButton} />
       </TouchableOpacity>
@@ -50,11 +60,51 @@ const styles = StyleSheet.create({
     height: 65,
     width: 65,
   },
-  chestImage: {
+  chestArea: {
     position: 'absolute',
-    top: '10%',  // Adjust as needed
-    left: '10%',  // Adjust as needed
-    width: '20%',  // Adjust as needed
-    height: '20%',  // Adjust as needed
+    top: '29%',  // Adjust as needed
+    left: '39%',  // Adjust as needed
+    width: '22%',  // Adjust as needed
+    height: '6%',  // Adjust as needed
+    borderColor: 'red',
+    borderWidth: 2,
   },
+  deltArea1: {
+    position: 'absolute',
+    top: '28%',  // Adjust as needed
+    left: '30%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '5%',  // Adjust as needed
+    borderColor: 'red',
+    borderWidth: 2,
+  },
+  deltArea2: {
+    position: 'absolute',
+    top: '28%',  // Adjust as needed
+    left: '60%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '5%',  // Adjust as needed
+    borderColor: 'red',
+    borderWidth: 2,
+  },
+  bicepArea1: {
+    position: 'absolute',
+    top: '33%',  // Adjust as needed
+    left: '28%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '6%',  // Adjust as needed
+    borderColor: 'red',
+    borderWidth: 2,
+  },
+  bicepArea2: {
+    position: 'absolute',
+    top: '33%',  // Adjust as needed
+    left: '62%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '6%',  // Adjust as needed
+    borderColor: 'red',
+    borderWidth: 2,
+  },
+
+
 });
