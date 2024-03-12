@@ -7,11 +7,20 @@ import flipButton from '../assets/flipButton.png';
 import chestImage from '../assets/muscleChest.png';
 import absImage from '../assets/muscleAbs.png';
 import deltsImage from '../assets/muscleDelts.png';
+import bicepsImage from '../assets/muscleBiceps.png';
+import forearmsImage from '../assets/muscleForearms.png';
+import quadsImage from '../assets/muscleQuads.png';
+import calvesImage from '../assets/muscleCalves.png';
 
 export default function Learn() {
   const [isFront, setIsFront] = useState(true);
   const [chestModalVisible, setChestModalVisible] = useState(false);
   const [absModalVisible, setAbsModalVisible] = useState(false);
+  const [deltModalVisible, setDeltModalVisible] = useState(false);
+  const [bicepModalVisible, setBicepModalVisible] = useState(false);
+  const [forearmModalVisible, setForearmModalVisible] = useState(false);
+  const [quadsModalVisible, setQuadsModalVisible] = useState(false);
+  const [calvesModalVisible, setCalvesModalVisible] = useState(false);
 
   const flipImage = () => {
     setIsFront(!isFront);
@@ -22,15 +31,15 @@ export default function Learn() {
   };
 
   const handleDeltClick = () => {
-    alert('Delt area clicked');
+    setDeltModalVisible(true);
   };
 
   const handleBicepClick = () => {
-    alert('Bicep area clicked');
+    setBicepModalVisible(true);
   };
 
   const handleForearmClick = () => {
-    alert('Forearm area clicked');
+    setForearmModalVisible(true);
   }
   
   const handleAbsClick = () => {
@@ -38,7 +47,11 @@ export default function Learn() {
   };
 
   const handleQuadsClick = () => {
-    alert('Quads area clicked');
+    setQuadsModalVisible(true);
+  }
+
+  const handleCalvesClick = () => {
+    setCalvesModalVisible(true);
   }
 
   const handleUpperBackClick = () => {
@@ -55,10 +68,6 @@ export default function Learn() {
 
   const handleHamstringsClick = () => {
     alert('Hamstrings area clicked');
-  }
-
-  const handleCalvesClick = () => {
-    alert('Calves area clicked');
   }
 
   const handleTricepClick = () => {
@@ -78,15 +87,15 @@ export default function Learn() {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>{muscleName}</Text>
-            <Image source={imageUri} style={{width: 222, height: 120}} />
+            <Image style={styles.modalImageStyle} source={imageUri}/>
             <Text style={styles.muscleInfo}>{muscleInfo}</Text>
             <TouchableOpacity
-              style={{ ...styles.openButton, backgroundColor: "#33363F" }}
+              style={{ ...styles.closeButton, backgroundColor: "#33363F" }}
               onPress={() => {
                 setModalVisible(false);
               }}
             >
-              <Text style={styles.textStyle}>Close</Text>
+              <Text style={styles.buttonTextStyle}>Close</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -94,22 +103,70 @@ export default function Learn() {
     );
   }
 
+  const muscle = [
+    {
+      modalVisible: chestModalVisible,
+      setModalVisible: setChestModalVisible,
+      muscleName: "Chest",
+      muscleInfo: "Some information about the chest muscles...",
+      imageUri: chestImage,
+    },
+    {
+      modalVisible: absModalVisible,
+      setModalVisible: setAbsModalVisible,
+      muscleName: "Abs",
+      muscleInfo: "Some information about the abs muscles...",
+      imageUri: absImage,
+    },
+    {
+      modalVisible: deltModalVisible,
+      setModalVisible: setDeltModalVisible,
+      muscleName: "Deltoids",
+      muscleInfo: "Some information about the deltoids...",
+      imageUri: deltsImage,
+    },
+    {
+      modalVisible: bicepModalVisible,
+      setModalVisible: setBicepModalVisible,
+      muscleName: "Biceps",
+      muscleInfo: "Some information about the biceps...",
+      imageUri: bicepsImage,
+    },
+    {
+      modalVisible: forearmModalVisible,
+      setModalVisible: setForearmModalVisible,
+      muscleName: "Forearms",
+      muscleInfo: "Some information about the forearms...",
+      imageUri: forearmsImage,
+    },
+    {
+      modalVisible: quadsModalVisible,
+      setModalVisible: setQuadsModalVisible,
+      muscleName: "Quadriceps",
+      muscleInfo: "Some information about the quadriceps...",
+      imageUri: quadsImage,
+    },
+    {
+      modalVisible: calvesModalVisible,
+      setModalVisible: setCalvesModalVisible,
+      muscleName: "Calves",
+      muscleInfo: "Some information about the calves...",
+      imageUri: calvesImage,
+    },
+  ];
+
   return (
     <View style={styles.container}>
-        <MuscleModal 
-        modalVisible={chestModalVisible} 
-        setModalVisible={setChestModalVisible} 
-        muscleName="Chest" 
-        muscleInfo="Some information about the chest muscles..."
-        imageUri={chestImage}
+    {muscle.map((muscle) => (
+      <MuscleModal
+        key={muscle.muscleName}
+        modalVisible={muscle.modalVisible}
+        setModalVisible={muscle.setModalVisible}
+        muscleName={muscle.muscleName}
+        muscleInfo={muscle.muscleInfo}
+        imageUri={muscle.imageUri}
       />
-      <MuscleModal 
-        modalVisible={absModalVisible} 
-        setModalVisible={setAbsModalVisible} 
-        muscleName="Abs" 
-        muscleInfo="Some information about the abs muscles..."
-        imageUri={absImage}
-      />
+    ))}
        
       <Image source={isFront ? muscleFront : muscleBack} style={styles.chart} />
       {isFront && (
@@ -165,25 +222,33 @@ const styles = StyleSheet.create({
       shadowRadius: 4,
       elevation: 5
     },
-    openButton: {
+    closeButton: {
       backgroundColor: "#F194FF",
       borderRadius: 10,
       padding: 10,
       elevation: 2
     },
-    textStyle: {
+    modalImageStyle: {
+      width: 222,
+      height: 125,
+      marginBottom: 15,
+    },
+    buttonTextStyle: {
       color: "#C2CAF2",
+      fontSize: 16,
       fontWeight: "bold",
       textAlign: "center"
     },
     muscleInfo: {
       color: "#C2CAF2",
       marginBottom: 15,
-      textAlign: "center"
+      textAlign: "center",
     },
     modalText: {
       color: "#C2CAF2",
       marginBottom: 15,
+      fontSize: 20,
+      fontWeight: "bold",
       textAlign: "center"
     },
   container: {
