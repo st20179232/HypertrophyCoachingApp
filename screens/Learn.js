@@ -11,6 +11,12 @@ import bicepsImage from '../assets/muscleBiceps.png';
 import forearmsImage from '../assets/muscleForearms.png';
 import quadsImage from '../assets/muscleQuads.png';
 import calvesImage from '../assets/muscleCalves.png';
+import upperbackImage from '../assets/muscleUpperBack.png';
+import latsImage from '../assets/muscleLats.png';
+import glutesImage from '../assets/muscleGlutes.png';
+import hamstringsImage from '../assets/muscleHamstrings.png';
+import tricepsImage from '../assets/muscleTriceps.png';
+
 
 export default function Learn() {
   const [isFront, setIsFront] = useState(true);
@@ -21,6 +27,12 @@ export default function Learn() {
   const [forearmModalVisible, setForearmModalVisible] = useState(false);
   const [quadsModalVisible, setQuadsModalVisible] = useState(false);
   const [calvesModalVisible, setCalvesModalVisible] = useState(false);
+  const [upperBackModalVisible, setUpperBackModalVisible] = useState(false);
+  const [latsModalVisible, setLatsModalVisible] = useState(false);
+  const [glutesModalVisible, setGlutesModalVisible] = useState(false);
+  const [hamstringsModalVisible, setHamstringsModalVisible] = useState(false);
+  const [tricepsModalVisible, setTricepsModalVisible] = useState(false);
+ 
 
   const flipImage = () => {
     setIsFront(!isFront);
@@ -55,23 +67,23 @@ export default function Learn() {
   }
 
   const handleUpperBackClick = () => {
-    alert('Upper back area clicked');
+    setUpperBackModalVisible(true);
   }
 
   const handleLatsClick = () => {
-    alert('Lats area clicked');
+    setLatsModalVisible(true);
   }
 
   const handleGlutesClick = () => {
-    alert('Glutes area clicked');
+    setGlutesModalVisible(true);
   }
 
   const handleHamstringsClick = () => {
-    alert('Hamstrings area clicked');
+    setHamstringsModalVisible(true);
   }
 
   const handleTricepClick = () => {
-    alert('Tricep area clicked');
+    setTricepsModalVisible(true);
   }
   
   function MuscleModal({modalVisible, setModalVisible, muscleName, muscleInfo, imageUri}) {
@@ -107,15 +119,15 @@ export default function Learn() {
     {
       modalVisible: chestModalVisible,
       setModalVisible: setChestModalVisible,
-      muscleName: "Chest",
-      muscleInfo: "Some information about the chest muscles...",
+      muscleName: "Pecs",
+      muscleInfo: "The function of the pecs is to bring your upper arm across your body\n\nYou can bias the upper or lower part of your pecs by using a more upwards or downwards angle respectively.\n\nYou can target your pecs through a mix of pressing and fly movements.",
       imageUri: chestImage,
     },
     {
       modalVisible: absModalVisible,
       setModalVisible: setAbsModalVisible,
-      muscleName: "Abs",
-      muscleInfo: "Some information about the abs muscles...",
+      muscleName: "Abdominals",
+      muscleInfo: "The function of the abs is to flex your trunk.\n\nThey also help to stabilize your trunk and pelvis during movement.\n\nWhen training your abs you should focus on crunching your chest down or your hips up.",
       imageUri: absImage,
     },
     {
@@ -153,6 +165,42 @@ export default function Learn() {
       muscleInfo: "Some information about the calves...",
       imageUri: calvesImage,
     },
+    {
+      modalVisible: upperBackModalVisible,
+      setModalVisible: setUpperBackModalVisible,
+      muscleName: "Upper Back",
+      muscleInfo: "Some information about the upper back muscles...",
+      imageUri: upperbackImage,
+    },
+    {
+      modalVisible: latsModalVisible,
+      setModalVisible: setLatsModalVisible,
+      muscleName: "Lats",
+      muscleInfo: "Some information about the lats muscles...",
+      imageUri: latsImage,
+    },
+    {
+      modalVisible: glutesModalVisible,
+      setModalVisible: setGlutesModalVisible,
+      muscleName: "Glutes",
+      muscleInfo: "Some information about the glutes muscles...",
+      imageUri: glutesImage,
+    },
+    {
+      modalVisible: hamstringsModalVisible,
+      setModalVisible: setHamstringsModalVisible,
+      muscleName: "Hamstrings",
+      muscleInfo: "Some information about the hamstrings muscles...",
+      imageUri: hamstringsImage,
+    },
+    {
+      modalVisible: tricepsModalVisible,
+      setModalVisible: setTricepsModalVisible,
+      muscleName: "Triceps",
+      muscleInfo: "Some information about the triceps muscles...",
+      imageUri: tricepsImage,
+    },
+
   ];
 
   return (
@@ -242,7 +290,7 @@ const styles = StyleSheet.create({
     muscleInfo: {
       color: "#C2CAF2",
       marginBottom: 15,
-      textAlign: "center",
+      textAlign: "left",
     },
     modalText: {
       color: "#C2CAF2",
