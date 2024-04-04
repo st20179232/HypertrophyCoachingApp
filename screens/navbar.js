@@ -11,6 +11,10 @@ import HomeIcon from '../assets/Home.png';
 import ProgramIcon from '../assets/Program.png';
 import LearnIcon from '../assets/Learn.png';
 import AccountIcon from '../assets/Profile.png';
+import homeSelected from '../assets/HomeS.png';
+import programSelected from '../assets/ProgramS.png';
+import learnSelected from '../assets/LearnS.png';
+import accountSelected from '../assets/ProfileS.png';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,13 +26,13 @@ export default function NavBar() {
           let icon;
 
           if (route.name === 'Home') {
-            icon = HomeIcon;
+            icon = focused ? homeSelected : HomeIcon;
           } else if (route.name === 'Program') {
-            icon = ProgramIcon;
+            icon = focused ? programSelected : ProgramIcon;
           } else if (route.name === 'Learn') {
-            icon = LearnIcon;
+            icon = focused ? learnSelected : LearnIcon;
           } else if (route.name === 'Account') {
-            icon = AccountIcon;
+            icon = focused ? accountSelected : AccountIcon;
           }
 
           // You can return any component that you like here!
@@ -45,6 +49,8 @@ export default function NavBar() {
           height: 50,
           backgroundColor: '#7D85AD',
           padding: 3,
+          borderTopLeftRadius: 15,
+          borderTopRightRadius: 15,
         },
       })}
     >

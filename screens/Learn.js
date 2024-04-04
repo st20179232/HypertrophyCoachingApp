@@ -244,7 +244,13 @@ export default function Learn() {
       <TouchableOpacity style={styles.forearmArea1} onPress={handleForearmClick} />
       <TouchableOpacity style={styles.forearmArea2} onPress={handleForearmClick} />
       <TouchableOpacity style={styles.calvesArea} onPress={handleCalvesClick} />
+
+      <View style={styles.roundedRectangle}>
+        <Text style={styles.text}>Click a muscle to learn more.</Text>
+      </View>
     </View>
+
+    
   );
 }
 
@@ -271,7 +277,6 @@ const styles = StyleSheet.create({
       elevation: 5
     },
     closeButton: {
-      backgroundColor: "#F194FF",
       borderRadius: 10,
       padding: 10,
       elevation: 2
@@ -308,6 +313,7 @@ const styles = StyleSheet.create({
   chart: {
     width: '65%',  // Adjust as needed
     height: '65%',  // Adjust as needed
+    marginBottom: 30,  // Add some margin at the bottom
   },
   flipButtonContainer: {
     position: 'absolute',
@@ -324,8 +330,6 @@ const styles = StyleSheet.create({
     left: '39%',  // Adjust as needed
     width: '22%',  // Adjust as needed
     height: '6%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   deltArea1: {
     position: 'absolute',
@@ -333,8 +337,6 @@ const styles = StyleSheet.create({
     left: '30%',  // Adjust as needed
     width: '9%',  // Adjust as needed
     height: '5%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   deltArea2: {
     position: 'absolute',
@@ -342,8 +344,6 @@ const styles = StyleSheet.create({
     left: '60%',  // Adjust as needed
     width: '9%',  // Adjust as needed
     height: '5%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   bicepArea1: {
     position: 'absolute',
@@ -351,8 +351,6 @@ const styles = StyleSheet.create({
     left: '28%',  // Adjust as needed
     width: '9%',  // Adjust as needed
     height: '6%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   bicepArea2: {
     position: 'absolute',
@@ -360,8 +358,6 @@ const styles = StyleSheet.create({
     left: '62%',  // Adjust as needed
     width: '9%',  // Adjust as needed
     height: '6%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   forearmArea1: {
     position: 'absolute',
@@ -369,8 +365,6 @@ const styles = StyleSheet.create({
     left: '24%',  // Adjust as needed
     width: '9%',  // Adjust as needed
     height: '6%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   forearmArea2: {
     position: 'absolute',
@@ -378,8 +372,6 @@ const styles = StyleSheet.create({
     left: '67%',  // Adjust as needed
     width: '9%',  // Adjust as needed
     height: '6%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   absArea: {
     position: 'absolute',
@@ -387,8 +379,6 @@ const styles = StyleSheet.create({
     left: '41%',  // Adjust as needed
     width: '18%',  // Adjust as needed
     height: '10%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   quadsArea: {
     position: 'absolute',
@@ -396,8 +386,6 @@ const styles = StyleSheet.create({
     left: '36%',  // Adjust as needed
     width: '28%',  // Adjust as needed
     height: '13%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   upperBackArea: {
     position: 'absolute',
@@ -405,8 +393,6 @@ const styles = StyleSheet.create({
     left: '39%',  // Adjust as needed
     width: '23%',  // Adjust as needed
     height: '8%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   latsArea: {
     position: 'absolute',
@@ -414,8 +400,6 @@ const styles = StyleSheet.create({
     left: '38%',  // Adjust as needed
     width: '25%',  // Adjust as needed
     height: '9%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   tricepArea1: {
     position: 'absolute',
@@ -423,8 +407,6 @@ const styles = StyleSheet.create({
     left: '28%',  // Adjust as needed
     width: '9%',  // Adjust as needed
     height: '6%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   tricepArea2: {
     position: 'absolute',
@@ -432,8 +414,6 @@ const styles = StyleSheet.create({
     left: '63%',  // Adjust as needed
     width: '9%',  // Adjust as needed
     height: '6%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   glutesArea: {
     position: 'absolute',
@@ -441,8 +421,6 @@ const styles = StyleSheet.create({
     left: '38%',  // Adjust as needed
     width: '25%',  // Adjust as needed
     height: '8%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   hamstringsArea: {
     position: 'absolute',
@@ -450,8 +428,6 @@ const styles = StyleSheet.create({
     left: '38%',  // Adjust as needed
     width: '25%',  // Adjust as needed
     height: '10%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
   },
   calvesArea: {
     position: 'absolute',
@@ -459,8 +435,29 @@ const styles = StyleSheet.create({
     left: '38%',  // Adjust as needed
     width: '25%',  // Adjust as needed
     height: '10%',  // Adjust as needed
-    borderColor: 'red',
-    borderWidth: 2,
+  },
+  roundedRectangle: {
+    width: '60%', // Adjust as needed
+    height: '6%', // Adjust as needed
+    backgroundColor: '#33363F',
+    borderRadius: 15,
+    justifyContent: 'center',
+    padding: 15,
+    marginBottom: 20, // Add some margin at the bottom
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  text: {
+    color: '#C2CAF2',
+    fontSize: 16,
+    marginBottom: 0,
+    textAlign: 'center',
   },
 });
 
