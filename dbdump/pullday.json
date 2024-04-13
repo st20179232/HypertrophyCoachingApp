@@ -1,0 +1,92 @@
+[
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Gym",
+        "Variation": "Wide Grip Pulldown"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Gym",
+        "Variation": "T-Bar Row"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Gym",
+        "Variation": "Narrow Grip Pulldown"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Kelso Shrug"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Preacher Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Hammer Curl"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Free Weight",
+        "Variation": "Pull Up"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Free Weight",
+        "Variation": "Bent Over Row"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Row"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Kelso Shrug"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Hammer Curl"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Band Only",
+        "Variation": "Pull Up"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Band Only",
+        "Variation": "Inverted Row"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Row"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Shrug"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Hammer Curl"
+    }
+]

@@ -1,0 +1,77 @@
+[
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Gym",
+        "Variation": "Hack Squat"
+    },
+    {
+        "ExerciseType": "Hinge",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine RDL(Glutes) // SLDL(Hamstrings)"
+    },
+    {
+        "ExerciseType": "Leg Extension",
+        "EquipmentType": "Gym",
+        "Variation": "Leg Extension"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Seated Leg Curl"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Calf Raise"
+    },
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Squat"
+    },
+    {
+        "ExerciseType": "Hinge",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell RDL(Glutes) // SLDL(Hamstrings)"
+    },
+    {
+        "ExerciseType": "Leg Extension",
+        "EquipmentType": "Free Weight",
+        "Variation": "Banded Single Leg Extension"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Lying Leg Curl"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Standing Calf Raise"
+    },
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Band Only",
+        "Variation": "Split Squat"
+    },
+    {
+        "ExerciseType": "Hinge",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Good Morning"
+    },
+    {
+        "ExerciseType": "Leg Extension",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Single Leg Extension"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Nordic Curl"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Band Only",
+        "Variation": "Standing Calf Raise"
+    }
+]

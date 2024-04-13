@@ -10,6 +10,7 @@ const WorkoutPlanBox = () => {
     console.log('Button pressed');
   };
 
+
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Build Base Program</Text>
@@ -40,7 +41,7 @@ const WorkoutPlanBox = () => {
 
       </View>
       <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
-        <Text style={styles.buttonTextStyle}>Generate Plan</Text>
+        <Text style={styles.buttonTextStyle}>Select Plan and Customise</Text>
       </TouchableOpacity>
     </View>
   );

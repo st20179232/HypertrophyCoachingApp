@@ -1,0 +1,92 @@
+[
+    {
+        "ExerciseType": "Squats",
+        "EquipmentType": "Gym",
+        "Variation": "Hack Squat"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Seated Leg Curl"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Bench Press"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machince Shoulder Press"
+    },
+    {
+        "ExerciseType": "Pull Down",
+        "EquipmentType": "Gym",
+        "Variation": "Narrow Grip Pulldown"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Gym",
+        "Variation": "Chest Supported Row"
+    },
+    {
+        "ExerciseType": "Squats",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Squat"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Lying Leg Curl"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Bench Press"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Shoulder Press"
+    },
+    {
+        "ExerciseType": "Pull Down",
+        "EquipmentType": "Free Weight",
+        "Variation": "Pull Up"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Free Weight",
+        "Variation": "Bent Over Row"
+    },
+    {
+        "ExerciseType": "Squats",
+        "EquipmentType": "Band Only",
+        "Variation": "Squat"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Leg Curl"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Band Only",
+        "Variation": "Push Up"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Band Only",
+        "Variation": "High Decline Press"
+    },
+    {
+        "ExerciseType": "Pull Down",
+        "EquipmentType": "Band Only",
+        "Variation": "Pull Up"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Band Only",
+        "Variation": "Inverted Row"
+    }
+]

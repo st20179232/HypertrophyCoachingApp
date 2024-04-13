@@ -1,0 +1,92 @@
+[
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Bench Press"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Gym",
+        "Variation": "Narrow Grip Pulldown"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Shoulder Press"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Gym",
+        "Variation": "T-Bar Row"
+    },
+    {
+        "ExerciseType": "Pushdown",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Pushdown"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Preacher Curl"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Bench Press"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Free Weight",
+        "Variation": "Pull Up"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Shoulder Press"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Free Weight",
+        "Variation": "Bench Supported Row"
+    },
+    {
+        "ExerciseType": "Overhead Triceps",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Overhead Extension"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Curl"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Band Only",
+        "Variation": "Push Up"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Band Only",
+        "Variation": "Pull Up"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Band Only",
+        "Variation": "High Decline Push Up"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Band Only",
+        "Variation": "Inverted Row"
+    },
+    {
+        "ExerciseType": "Pushdown",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Pushdown"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Curl"
+    }
+]

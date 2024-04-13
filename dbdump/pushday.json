@@ -1,0 +1,92 @@
+[
+    {
+        "ExerciseType": "Incline Chest Press",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Incline Press"
+    },
+    {
+        "ExerciseType": "Chest Fly",
+        "EquipmentType": "Gym",
+        "Variation": "Pec Deck"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Shoulder Press"
+    },
+    {
+        "ExerciseType": "Shoulder Raise",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Lateral Raise"
+    },
+    {
+        "ExerciseType": "Tricep Press",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Dip"
+    },
+    {
+        "ExerciseType": "Tricep Pushdown",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Pushdown"
+    },
+    {
+        "ExerciseType": "Incline Chest Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Incline Press"
+    },
+    {
+        "ExerciseType": "Chest Fly",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Fly"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Shoulder Press"
+    },
+    {
+        "ExerciseType": "Shoulder Raise",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Lateral Raise"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "Close Grip Bench Press"
+    },
+    {
+        "ExerciseType": "Overhead Triceps",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Skullcrusher"
+    },
+    {
+        "ExerciseType": "Incline Chest Press",
+        "EquipmentType": "Band Only",
+        "Variation": "Decline Push Up"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Band Only",
+        "Variation": "Push Up"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Band Only",
+        "Variation": "High Decline Press"
+    },
+    {
+        "ExerciseType": "Shoulder Raise",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Lateral Raise"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Band Only",
+        "Variation": "BW Dip"
+    },
+    {
+        "ExerciseType": "Overhead Triceps",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Pushdown"
+    }
+]
