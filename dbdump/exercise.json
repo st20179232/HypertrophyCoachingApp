@@ -1,0 +1,782 @@
+[
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Gym",
+        "Variation": "Hack Squat"
+    },
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Squat"
+    },
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Gym",
+        "Variation": "Belt Squat"
+    },
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Gym",
+        "Variation": "Pendulum Squat"
+    },
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Squat"
+    },
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Free Weight",
+        "Variation": "Goblet Squat"
+    },
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Free Weight",
+        "Variation": "Split Squat"
+    },
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Band Only",
+        "Variation": "Squat"
+    },
+    {
+        "ExerciseType": "Squat",
+        "EquipmentType": "Band Only",
+        "Variation": "Split Squat"
+    },
+    {
+        "ExerciseType": "Hinge",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine RDL(Glutes) // SLDL(Hamstrings)"
+    },
+    {
+        "ExerciseType": "Hinge",
+        "EquipmentType": "Gym",
+        "Variation": "Belt Squat RDL(Glutes) // SLDL(Hamstrings)"
+    },
+    {
+        "ExerciseType": "Hinge",
+        "EquipmentType": "Gym",
+        "Variation": "Hyperextension"
+    },
+    {
+        "ExerciseType": "Hinge",
+        "EquipmentType": "Free Weight",
+        "Variation": "Trap Bar RDL(Glutes) // SLDL(Hamstrings)"
+    },
+    {
+        "ExerciseType": "Hinge",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell RDL(Glutes) // SLDL(Hamstrings)"
+    },
+    {
+        "ExerciseType": "Hinge",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB RDL(Glutes) // SLDL(Hamstrings)"
+    },
+    {
+        "ExerciseType": "Hinge",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Good Morning"
+    },
+    {
+        "ExerciseType": "Hinge",
+        "EquipmentType": "Band Only",
+        "Variation": "RDL(Glutes) // SLDL(Hamstrings)"
+    },
+    {
+        "ExerciseType": "Leg Extension",
+        "EquipmentType": "Gym",
+        "Variation": "Leg Extension"
+    },
+    {
+        "ExerciseType": "Leg Extension",
+        "EquipmentType": "Free Weight",
+        "Variation": "Banded Single Leg Extension"
+    },
+    {
+        "ExerciseType": "Leg Extension",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Single Leg Extension"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Seated Leg Curl"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Lying Leg Curl"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Standing Leg Curl"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Lying Leg Curl"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Leg Curl"
+    },
+    {
+        "ExerciseType": "Leg Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Nordic Curl"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Standing Calf Raise"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Gym",
+        "Variation": "Seated Calf Raise"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Gym",
+        "Variation": "Calf Press"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Standing Calf Raise"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Seated Calf Raise"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Standing Calf Raise"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Seated Calf Raise"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Band Only",
+        "Variation": "Standing Calf Raise"
+    },
+    {
+        "ExerciseType": "Calf Raise",
+        "EquipmentType": "Band Only",
+        "Variation": "Seated Calf Raise"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Bench Press"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Chest Press"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Press"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Bench Press"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Bench Press"
+    },
+    {
+        "ExerciseType": "Chest Press",
+        "EquipmentType": "Band Only",
+        "Variation": "Push Up"
+    },
+    {
+        "ExerciseType": "Incline Chest Press",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Incline Press"
+    },
+    {
+        "ExerciseType": "Incline Chest Press",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Incline Press"
+    },
+    {
+        "ExerciseType": "Incline Chest Press",
+        "EquipmentType": "Gym",
+        "Variation": "Incline Cable Press"
+    },
+    {
+        "ExerciseType": "Incline Chest Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Incline Press"
+    },
+    {
+        "ExerciseType": "Incline Chest Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Incline Press"
+    },
+    {
+        "ExerciseType": "Incline Chest Press",
+        "EquipmentType": "Band Only",
+        "Variation": "Decline Push Up"
+    },
+    {
+        "ExerciseType": "Chest Fly",
+        "EquipmentType": "Gym",
+        "Variation": "Pec Deck"
+    },
+    {
+        "ExerciseType": "Chest Fly",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Fly"
+    },
+    {
+        "ExerciseType": "Chest Fly",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Fly"
+    },
+    {
+        "ExerciseType": "Chest Fly",
+        "EquipmentType": "Band Only",
+        "Variation": "Sliding Chest Fly"
+    },
+    {
+        "ExerciseType": "Chest Fly",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Pec Fly"
+    },
+    {
+        "ExerciseType": "Shoulder Raise",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Lateral Raise"
+    },
+    {
+        "ExerciseType": "Shoulder Raise",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Lateral Raise"
+    },
+    {
+        "ExerciseType": "Shoulder Raise",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Upright Row"
+    },
+    {
+        "ExerciseType": "Shoulder Raise",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Lateral Raise"
+    },
+    {
+        "ExerciseType": "Shoulder Raise",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Upright Row"
+    },
+    {
+        "ExerciseType": "Shoulder Raise",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Upright Row"
+    },
+    {
+        "ExerciseType": "Shoulder Raise",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Lateral Raise"
+    },
+    {
+        "ExerciseType": "Shoulder Raise",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Upright Row"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Shoulder Press"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Shoulder Press"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Shoulder Press"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Shoulder Press"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Band Only",
+        "Variation": "High Decline Press"
+    },
+    {
+        "ExerciseType": "Shoulder Press",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Shoulder Press"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Close Grip Press"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine JM Press"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Close Grip Press"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Dip"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "Close Grip Bench Press"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB JM Press"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell JM Press"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Free Weight",
+        "Variation": "BW Dip"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Band Only",
+        "Variation": "Close Grip/Diamond Push"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Band Only",
+        "Variation": "BW Dip"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Band Only",
+        "Variation": "JM Push Up"
+    },
+    {
+        "ExerciseType": "Triceps Press",
+        "EquipmentType": "Band Only",
+        "Variation": "BW JM Press"
+    },
+    {
+        "ExerciseType": "Overhead Triceps",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Skullcrusher"
+    },
+    {
+        "ExerciseType": "Overhead Triceps",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Overhead Extension"
+    },
+    {
+        "ExerciseType": "Overhead Triceps",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Skullcrusher"
+    },
+    {
+        "ExerciseType": "Overhead Triceps",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Skullcrusher"
+    },
+    {
+        "ExerciseType": "Overhead Triceps",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Overhead Extension"
+    },
+    {
+        "ExerciseType": "Overhead Triceps",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Overhead Extension"
+    },
+    {
+        "ExerciseType": "Overhead Triceps",
+        "EquipmentType": "Band Only",
+        "Variation": "Overhead Extension"
+    },
+    {
+        "ExerciseType": "Overhead Triceps",
+        "EquipmentType": "Band Only",
+        "Variation": "BW Skullcrusher"
+    },
+    {
+        "ExerciseType": "Pushdown",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Pushdown"
+    },
+    {
+        "ExerciseType": "Pushdown",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Pushdown"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Gym",
+        "Variation": "Chest Supported Row"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Gym",
+        "Variation": "T-Bar Row"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Row"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Free Weight",
+        "Variation": "Bent Over Row"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Free Weight",
+        "Variation": "Bench Supported Row"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Row"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Free Weight",
+        "Variation": "Landmine Row"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Band Only",
+        "Variation": "Inverted Row"
+    },
+    {
+        "ExerciseType": "Row",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Row"
+    },
+    {
+        "ExerciseType": "Rear Fly",
+        "EquipmentType": "Gym",
+        "Variation": "Reverse Pec Deck"
+    },
+    {
+        "ExerciseType": "Rear Fly",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Rear Delt Fly"
+    },
+    {
+        "ExerciseType": "Rear Fly",
+        "EquipmentType": "Free Weight",
+        "Variation": "Dumbbell Rear Delt Fly"
+    },
+    {
+        "ExerciseType": "Rear Fly",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Rear Delt Fly"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Shrug"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Shrug"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Gym",
+        "Variation": "Smith Machine Kelso Shrug"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Kelso Shrug"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Kelso Shrug"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Shrug"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Free Weight",
+        "Variation": "Trap Bar Shrug"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Shrug"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Kelso Shrug"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Shrug"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Kelso Shrug"
+    },
+    {
+        "ExerciseType": "Shrug",
+        "EquipmentType": "Band Only",
+        "Variation": "Inverted Kelso Shrug"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Gym",
+        "Variation": "Wide Grip Pulldown"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Gym",
+        "Variation": "Assisted Pull Up"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Gym",
+        "Variation": "Narrow Grip Pulldown"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Pulldown"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Band Only",
+        "Variation": "Pull Up"
+    },
+    {
+        "ExerciseType": "Forearm Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Wrist Curl"
+    },
+    {
+        "ExerciseType": "Forearm Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Wrist Curl"
+    },
+    {
+        "ExerciseType": "Forearm Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Wrist Curl"
+    },
+    {
+        "ExerciseType": "Forearm Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Wrist Curl"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Curl"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Curl"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Face-Away Curl"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Preacher Curl"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Preacher Curl"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Curl"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Preacher Curl"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Curl"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Preacher Curl"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Inverted Row Curl"
+    },
+    {
+        "ExerciseType": "Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Hammer Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Preacher Hammer Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Hammer Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Reverse Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Hammer Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Preacher Hammer Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "DB Reverse Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "Barbell Reverse Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Free Weight",
+        "Variation": "Neutral Grip Bar Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Hammer Curl"
+    },
+    {
+        "ExerciseType": "Hammer Curl",
+        "EquipmentType": "Band Only",
+        "Variation": "Banded Reverse Curl"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Gym",
+        "Variation": "Wide Grip Pulldown"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Gym",
+        "Variation": "Assisted Pull Up"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Gym",
+        "Variation": "Narrow Grip Pulldown"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Pulldown"
+    },
+    {
+        "ExerciseType": "Pulldown",
+        "EquipmentType": "Band Only",
+        "Variation": "Pull Up"
+    },
+    {
+        "ExerciseType": "Abs",
+        "EquipmentType": "Gym",
+        "Variation": "Machine Crunch"
+    },
+    {
+        "ExerciseType": "Abs",
+        "EquipmentType": "Gym",
+        "Variation": "Cable Crunch"
+    },
+    {
+        "ExerciseType": "Abs",
+        "EquipmentType": "Gym",
+        "Variation": "Leg Raise"
+    },
+    {
+        "ExerciseType": "Abs",
+        "EquipmentType": "Free Weight",
+        "Variation": "Crunch"
+    },
+    {
+        "ExerciseType": "Abs",
+        "EquipmentType": "Free Weight",
+        "Variation": "Leg Raise"
+    },
+    {
+        "ExerciseType": "Abs",
+        "EquipmentType": "Band Only",
+        "Variation": "Crunch"
+    },
+    {
+        "ExerciseType": "Abs",
+        "EquipmentType": "Band Only",
+        "Variation": "Leg Raise"
+    }
+]

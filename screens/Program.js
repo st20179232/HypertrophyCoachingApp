@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet, Modal, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { Picker } from '@react-native-picker/picker';
 import fullday from '../dbdump/fullday.json';
 import upperday from '../dbdump/upperday.json';
 import legday from '../dbdump/legday.json';
 import pushday from '../dbdump/pushday.json';
 import pullday from '../dbdump/pullday.json';
+import exercise from '../dbdump/exercise.json';
 
 
 export default function Program({ route }) {
@@ -13,8 +15,12 @@ export default function Program({ route }) {
   const [frequency, setFrequency] = useState('');  
   const [equipment, setEquipment] = useState('');  
   const [showWorkout, setShowWorkout] = useState(false);
-  const [showBackButton, setShowBackButton] = useState(false);
   const navigation = useNavigation();
+  const [currentView, setCurrentView] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedExerciseType, setSelectedExerciseType] = useState('');
+  const [exerciseToReplaceIndex, setExerciseToReplaceIndex] = useState(0);
+  const [pickerKey, setPickerKey] = useState(0);
 
 useEffect(() => {
   let frequency, equipment;
@@ -27,7 +33,7 @@ useEffect(() => {
   console.log(`route.params: ${JSON.stringify(route.params)}`);
   if (frequency === 'low') {
     setShowWorkout(true);
-    setShowBackButton(false);
+    setCurrentView('FullDay');
     if (equipment === 'gym') {
       setData(fullday.slice(0, 6));
     } else if (equipment === 'free') {
@@ -37,7 +43,6 @@ useEffect(() => {
     }
   } else if (frequency === 'medium') {
     setShowWorkout(false);
-    setShowBackButton(false);
     if (equipment === 'gym') {
       setData([
         { Variation: 'Upper', data: upperday.slice(0, 6) },
@@ -55,8 +60,7 @@ useEffect(() => {
       ]);
     }
     } else if (frequency === 'high') {
-      setShowWorkout(false); 
-      setShowBackButton(false);
+      setShowWorkout(false);
       if (equipment === 'gym') {
         setData([
           { Variation: 'Push', data: pushday.slice(0, 6) },
@@ -88,6 +92,13 @@ return (
         data.map((item, index) => (
           <View key={index} style={styles.itemContainer}>
             <Text style={styles.text}>{item.Variation}</Text>
+            <TouchableOpacity style={styles.smallbutton} onPress={() => {
+              setModalVisible(true);
+              setExerciseToReplaceIndex(index);
+              setSelectedExerciseType(`${data[exerciseToReplaceIndex].Variation}-${Date.now()}`);
+            }}>
+              <Text style={styles.buttonTextStyle}>↻</Text>
+            </TouchableOpacity>
           </View>
         ))
       ) : (
@@ -97,7 +108,6 @@ return (
             style={styles.buttons}
             onPress={() => {
               setShowWorkout(true);
-              setShowBackButton(true);
               // Set the data state to the corresponding slice of the workout data
               switch (item.Variation) {
                 case 'Upper':
@@ -170,7 +180,7 @@ return (
           </TouchableOpacity>
         ))
       )}
-      {showBackButton && (
+      {showWorkout && currentView !== 'FullDay' && (
         <TouchableOpacity
           style={styles.backButton}
           onPress={() => {
@@ -183,7 +193,59 @@ return (
           <Text style={[styles.buttonTextStyle, styles.buttons]}>Back</Text>
         </TouchableOpacity>
       )}
-    </View>
+      <Modal
+      animationType="slide"
+      transparent={true}
+      visible={modalVisible}
+      onRequestClose={() => {
+        setModalVisible(!modalVisible);
+      }}
+    >
+      <View style={styles.centeredView}>
+        <View style={styles.modalView}>
+          <Text style={styles.modalText}>Select New Exercise:</Text>
+          <Picker
+            key={pickerKey}
+            selectedValue={selectedExerciseType}
+            onValueChange={(itemValue, itemIndex) => {
+              setSelectedExerciseType(itemValue);
+              setPickerKey(prevKey => prevKey + 1); // Update the pickerKey state
+            }}
+            style={{ height: 50, width: 150 }}
+          >
+            {exercise.map((item, index) => (
+              <Picker.Item 
+                key={index} 
+                label={`${item.ExerciseType}, ${item.EquipmentType}, ${item.Variation}`} 
+                value={item.Variation} // Set the value to item.Variation
+              />
+            ))}
+          </Picker>
+          <TouchableOpacity
+            style={styles.modalButton}
+            onPress={() => {
+              const newData = [...data];
+              if (newData[exerciseToReplaceIndex]) { // Check if the item exists
+                newData[exerciseToReplaceIndex].Variation = selectedExerciseType; // Replace the Variation
+                setData(newData);
+              }
+              setModalVisible(!modalVisible);
+            }}
+            >
+            <Text style={styles.buttonTextStyle}>Confirm</Text>
+            </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.modalButton}
+            onPress={() => {
+              setModalVisible(!modalVisible);
+            }}
+          >
+            <Text style={styles.buttonTextStyle}>Close</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </Modal>
+  </View>
   </View>
 );
 }
@@ -203,7 +265,7 @@ const styles = StyleSheet.create({
   },
   roundedRectangle: {
     width: '90%',
-    height: '60%',
+    height: '70%',
     backgroundColor: '#33363F',
     borderRadius: 20,
     justifyContent: 'center',
@@ -228,10 +290,13 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     borderRadius: 10,
+    flexDirection: 'row', // Add this line
+    justifyContent: 'space-between', // Add this line
+    alignItems: 'center', // Add this line
   },
   buttons: {
     alignSelf: 'center',
-    width: '40%',
+    width: '50%',
     height: 'auto',
     backgroundColor: '#1F2025',
     borderRadius: 20,
@@ -251,5 +316,60 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     textAlign: "center"
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "#33363F",
+    borderRadius: 20,
+    height: '55%',
+    width: '80%',
+    padding: 35,
+    alignSelf: 'center',
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    maxHeight: '60%',
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
+    color: '#C2CAF2',
+  },
+  smallbutton: {
+    alignSelf: 'flex-end', // Change 'right' to 'flex-end'
+    width: 50,
+    height: 20,
+    backgroundColor: '#1F2025',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  modalButton: {
+    alignSelf: 'center',
+    width: '50%',
+    height: 'auto',
+    backgroundColor: '#1F2025',
+    borderRadius: 20,
+    padding: 15,
+    marginBottom: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
   },
 });
