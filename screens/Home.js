@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
-const WorkoutPlanBox = () => {
-  const [frequency, setFrequency] = useState('option1');
-  const [equipment, setEquipment] = useState('option1');
+const WorkoutPlanBox = ({ navigation }) => {
+  const [frequency, setFrequency] = useState('low');
+  const [equipment, setEquipment] = useState('gym');
 
   const handleButtonPress = () => {
-    console.log('Button pressed');
+    console.log(`Selected frequency: ${frequency}`);
+    console.log(`Selected equipment: ${equipment}`);
+    navigation.navigate('Program', { frequency, equipment });
   };
 
 
@@ -21,9 +23,9 @@ const WorkoutPlanBox = () => {
           onValueChange={(itemValue) => setFrequency(itemValue)}
           style={styles.picker}
         >
-          <Picker.Item label="Low - 1/2x per Week" value="option1" />
-          <Picker.Item label="Medium - 3x per Week" value="option2" />
-          <Picker.Item label="High - 4/5x per Week" value="option3" />
+          <Picker.Item label="Low - 1/2x per Week" value="low" />
+          <Picker.Item label="Medium - 3x per Week" value="medium" />
+          <Picker.Item label="High - 4/5x per Week" value="high" />
         </Picker>
       </View>
 
@@ -34,9 +36,9 @@ const WorkoutPlanBox = () => {
           onValueChange={(itemValue) => setEquipment(itemValue)}
           style={styles.picker}
         >
-          <Picker.Item label="Gym" value="option1" />
-          <Picker.Item label="Free Weights" value="option2" />
-          <Picker.Item label="Band Only" value="option3" />
+          <Picker.Item label="Gym" value="gym" />
+          <Picker.Item label="Free Weights" value="free" />
+          <Picker.Item label="Band Only" value="band" />
         </Picker>
 
       </View>

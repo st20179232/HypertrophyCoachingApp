@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, TouchableOpacity, StyleSheet, Modal, Text } from 'react-native';
+import { View, Image, TouchableOpacity, StyleSheet, Modal, Text, FlatList } from 'react-native';
 
 import muscleFront from '../assets/muscleFront.png';
 import muscleBack from '../assets/muscleBack.png';
@@ -32,6 +32,8 @@ export default function Learn() {
   const [glutesModalVisible, setGlutesModalVisible] = useState(false);
   const [hamstringsModalVisible, setHamstringsModalVisible] = useState(false);
   const [tricepsModalVisible, setTricepsModalVisible] = useState(false);
+
+  const [tipsModalVisible, setTipsModalVisible] = useState(false);
  
 
   const flipImage = () => {
@@ -85,6 +87,223 @@ export default function Learn() {
   const handleTricepClick = () => {
     setTricepsModalVisible(true);
   }
+
+const trainingTips = ['1) Make sure you are pushing your sets near failure', 
+                      '2) Make sure you rest at least 2 minutes between sets, and longer for more challenging exercises',
+                      '3) Play around with your rep ranges to see what you enjoy, anywhere between 5 and 20 reps is recommended',
+                      '4) Play around with exercise setup to find what works best for you. Changing incline/decline angle, changing hand position, and using different attachments can all be beneficial',
+                      '5) Make sure you are recovering between sessions, play around with your number of sets if necessary',
+                      '6) Make sure you are eating enough calories and protein to reach your goals'
+                      ];
+
+
+  const styles = StyleSheet.create({
+    centeredView: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: 22
+    },
+    modalView: {
+      margin: 20,
+      backgroundColor: "#33363F",
+      borderRadius: 20,
+      padding: 35,
+      alignItems: "center",
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5,
+      maxHeight: '60%',
+    },
+    closeButton: {
+      borderRadius: 10,
+      padding: 10,
+      elevation: 2
+    },
+    modalImageStyle: {
+      width: 222,
+      height: 125,
+      marginBottom: 15,
+    },
+    buttonTextStyle: {
+      color: "#C2CAF2",
+      fontSize: 16,
+      fontWeight: "bold",
+      textAlign: "center"
+    },
+    muscleInfo: {
+      color: "#C2CAF2",
+      marginBottom: 15,
+      textAlign: "left",
+    },
+    modalText: {
+      color: "#C2CAF2",
+      marginBottom: 15,
+      fontSize: 20,
+      fontWeight: "bold",
+      textAlign: "center"
+    },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#1F2025'
+  },
+  chart: {
+    width: '65%',  // Adjust as needed
+    height: '65%',  // Adjust as needed
+    marginBottom: 30,  // Add some margin at the bottom
+  },
+  flipButtonContainer: {
+    position: 'absolute',
+    top: '5%',  // Adjust as needed
+    right: '5%',  // Adjust as needed
+  },
+  flipButton: {
+    height: 65,
+    width: 65,
+  },
+  chestArea: {
+    position: 'absolute',
+    top: '23%',  // Adjust as needed
+    left: '39%',  // Adjust as needed
+    width: '22%',  // Adjust as needed
+    height: '6%',  // Adjust as needed
+  },
+  deltArea1: {
+    position: 'absolute',
+    top: '22%',  // Adjust as needed
+    left: '30%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '5%',  // Adjust as needed
+  },
+  deltArea2: {
+    position: 'absolute',
+    top: '22%',  // Adjust as needed
+    left: '60%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '5%',  // Adjust as needed
+  },
+  bicepArea1: {
+    position: 'absolute',
+    top: '27%',  // Adjust as needed
+    left: '28%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '6%',  // Adjust as needed 
+  },
+  bicepArea2: {
+    position: 'absolute',
+    top: '27%',  // Adjust as needed
+    left: '62%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '6%',  // Adjust as needed
+  },
+  forearmArea1: {
+    position: 'absolute',
+    top: '33%',  // Adjust as needed
+    left: '24%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '6%',  // Adjust as needed
+  },
+  forearmArea2: {
+    position: 'absolute',
+    top: '33%',  // Adjust as needed
+    left: '67%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '6%',  // Adjust as needed
+  },
+  absArea: {
+    position: 'absolute',
+    top: '29%',  // Adjust as needed
+    left: '41%',  // Adjust as needed
+    width: '18%',  // Adjust as needed
+    height: '10%',  // Adjust as needed
+  },
+  quadsArea: {
+    position: 'absolute',
+    top: '42%',  // Adjust as needed
+    left: '36%',  // Adjust as needed
+    width: '28%',  // Adjust as needed
+    height: '13%',  // Adjust as needed
+  },
+  upperBackArea: {
+    position: 'absolute',
+    top: '21%',  // Adjust as needed
+    left: '39%',  // Adjust as needed
+    width: '23%',  // Adjust as needed
+    height: '8%',  // Adjust as needed
+  },
+  latsArea: {
+    position: 'absolute',
+    top: '29%',  // Adjust as needed
+    left: '38%',  // Adjust as needed
+    width: '25%',  // Adjust as needed
+    height: '9%',  // Adjust as needed
+  },
+  tricepArea1: {
+    position: 'absolute',
+    top: '28%',  // Adjust as needed
+    left: '28%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '6%',  // Adjust as needed
+  },
+  tricepArea2: {
+    position: 'absolute',
+    top: '28%',  // Adjust as needed
+    left: '63%',  // Adjust as needed
+    width: '9%',  // Adjust as needed
+    height: '6%',  // Adjust as needed
+  },
+  glutesArea: {
+    position: 'absolute',
+    top: '39%',  // Adjust as needed
+    left: '38%',  // Adjust as needed
+    width: '25%',  // Adjust as needed
+    height: '8%',  // Adjust as needed
+  },
+  hamstringsArea: {
+    position: 'absolute',
+    top: '47%',  // Adjust as needed
+    left: '38%',  // Adjust as needed
+    width: '25%',  // Adjust as needed
+    height: '10%',  // Adjust as needed
+  },
+  calvesArea: {
+    position: 'absolute',
+    top: '58%',  // Adjust as needed
+    left: '38%',  // Adjust as needed
+    width: '25%',  // Adjust as needed
+    height: '10%',  // Adjust as needed
+  },
+  roundedRectangle: {
+    width: '60%', // Adjust as needed
+    height: '6%', // Adjust as needed
+    backgroundColor: '#33363F',
+    borderRadius: 15,
+    justifyContent: 'center',
+    padding: 15,
+    marginBottom: 20, // Add some margin at the bottom
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  text: {
+    color: '#C2CAF2',
+    fontSize: 16,
+    marginBottom: 0,
+    textAlign: 'center',
+  },
+});
   
   function MuscleModal({modalVisible, setModalVisible, muscleName, muscleInfo, imageUri}) {
     return (
@@ -101,8 +320,7 @@ export default function Learn() {
             <Text style={styles.modalText}>{muscleName}</Text>
             <Image style={styles.modalImageStyle} source={imageUri}/>
             <Text style={styles.muscleInfo}>{muscleInfo}</Text>
-            <TouchableOpacity
-              style={{ ...styles.closeButton, backgroundColor: "#33363F" }}
+            <TouchableOpacity style={{ ...styles.closeButton, backgroundColor: "#33363F" }}
               onPress={() => {
                 setModalVisible(false);
               }}
@@ -205,17 +423,43 @@ export default function Learn() {
 
   return (
     <View style={styles.container}>
-    {muscle.map((muscle) => (
-      <MuscleModal
-        key={muscle.muscleName}
-        modalVisible={muscle.modalVisible}
-        setModalVisible={muscle.setModalVisible}
-        muscleName={muscle.muscleName}
-        muscleInfo={muscle.muscleInfo}
-        imageUri={muscle.imageUri}
-      />
-    ))}
-       
+      {muscle.map((muscle) => (
+        <MuscleModal
+          key={muscle.muscleName}
+          modalVisible={muscle.modalVisible}
+          setModalVisible={muscle.setModalVisible}
+          muscleName={muscle.muscleName}
+          muscleInfo={muscle.muscleInfo}
+          imageUri={muscle.imageUri}
+        />
+      ))}
+  
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={tipsModalVisible}
+        onRequestClose={() => {
+          setTipsModalVisible(!tipsModalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <FlatList
+              data={trainingTips}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => (
+                <Text style={styles.muscleInfo}>{item}</Text>
+              )}
+            />
+            <TouchableOpacity style={{ ...styles.closeButton, backgroundColor: "#33363F" }}
+              onPress={() => setTipsModalVisible(!tipsModalVisible)}
+            >
+              <Text style={styles.buttonTextStyle}>Hide Modal</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+  
       <Image source={isFront ? muscleFront : muscleBack} style={styles.chart} />
       {isFront && (
         <>
@@ -244,220 +488,14 @@ export default function Learn() {
       <TouchableOpacity style={styles.forearmArea1} onPress={handleForearmClick} />
       <TouchableOpacity style={styles.forearmArea2} onPress={handleForearmClick} />
       <TouchableOpacity style={styles.calvesArea} onPress={handleCalvesClick} />
-
+  
       <View style={styles.roundedRectangle}>
-        <Text style={styles.text}>Click a muscle to learn more.</Text>
+        <TouchableOpacity onPress={() => setTipsModalVisible(true)}>
+          <Text style={styles.buttonTextStyle}>Top Training Tips</Text>
+        </TouchableOpacity>
       </View>
     </View>
-
-    
   );
+  
+
 }
-
-const styles = StyleSheet.create({
-    centeredView: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      marginTop: 22
-    },
-    modalView: {
-      margin: 20,
-      backgroundColor: "#33363F",
-      borderRadius: 20,
-      padding: 35,
-      alignItems: "center",
-      shadowColor: "#000",
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 4,
-      elevation: 5
-    },
-    closeButton: {
-      borderRadius: 10,
-      padding: 10,
-      elevation: 2
-    },
-    modalImageStyle: {
-      width: 222,
-      height: 125,
-      marginBottom: 15,
-    },
-    buttonTextStyle: {
-      color: "#C2CAF2",
-      fontSize: 16,
-      fontWeight: "bold",
-      textAlign: "center"
-    },
-    muscleInfo: {
-      color: "#C2CAF2",
-      marginBottom: 15,
-      textAlign: "left",
-    },
-    modalText: {
-      color: "#C2CAF2",
-      marginBottom: 15,
-      fontSize: 20,
-      fontWeight: "bold",
-      textAlign: "center"
-    },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#1F2025'
-  },
-  chart: {
-    width: '65%',  // Adjust as needed
-    height: '65%',  // Adjust as needed
-    marginBottom: 30,  // Add some margin at the bottom
-  },
-  flipButtonContainer: {
-    position: 'absolute',
-    top: '5%',  // Adjust as needed
-    right: '5%',  // Adjust as needed
-  },
-  flipButton: {
-    height: 65,
-    width: 65,
-  },
-  chestArea: {
-    position: 'absolute',
-    top: '29%',  // Adjust as needed
-    left: '39%',  // Adjust as needed
-    width: '22%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
-  },
-  deltArea1: {
-    position: 'absolute',
-    top: '28%',  // Adjust as needed
-    left: '30%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '5%',  // Adjust as needed
-  },
-  deltArea2: {
-    position: 'absolute',
-    top: '28%',  // Adjust as needed
-    left: '60%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '5%',  // Adjust as needed
-  },
-  bicepArea1: {
-    position: 'absolute',
-    top: '33%',  // Adjust as needed
-    left: '28%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
-  },
-  bicepArea2: {
-    position: 'absolute',
-    top: '33%',  // Adjust as needed
-    left: '62%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
-  },
-  forearmArea1: {
-    position: 'absolute',
-    top: '39%',  // Adjust as needed
-    left: '24%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
-  },
-  forearmArea2: {
-    position: 'absolute',
-    top: '39%',  // Adjust as needed
-    left: '67%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
-  },
-  absArea: {
-    position: 'absolute',
-    top: '35%',  // Adjust as needed
-    left: '41%',  // Adjust as needed
-    width: '18%',  // Adjust as needed
-    height: '10%',  // Adjust as needed
-  },
-  quadsArea: {
-    position: 'absolute',
-    top: '48%',  // Adjust as needed
-    left: '36%',  // Adjust as needed
-    width: '28%',  // Adjust as needed
-    height: '13%',  // Adjust as needed
-  },
-  upperBackArea: {
-    position: 'absolute',
-    top: '26%',  // Adjust as needed
-    left: '39%',  // Adjust as needed
-    width: '23%',  // Adjust as needed
-    height: '8%',  // Adjust as needed
-  },
-  latsArea: {
-    position: 'absolute',
-    top: '34%',  // Adjust as needed
-    left: '38%',  // Adjust as needed
-    width: '25%',  // Adjust as needed
-    height: '9%',  // Adjust as needed
-  },
-  tricepArea1: {
-    position: 'absolute',
-    top: '33%',  // Adjust as needed
-    left: '28%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
-  },
-  tricepArea2: {
-    position: 'absolute',
-    top: '33%',  // Adjust as needed
-    left: '63%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
-  },
-  glutesArea: {
-    position: 'absolute',
-    top: '44%',  // Adjust as needed
-    left: '38%',  // Adjust as needed
-    width: '25%',  // Adjust as needed
-    height: '8%',  // Adjust as needed
-  },
-  hamstringsArea: {
-    position: 'absolute',
-    top: '52%',  // Adjust as needed
-    left: '38%',  // Adjust as needed
-    width: '25%',  // Adjust as needed
-    height: '10%',  // Adjust as needed
-  },
-  calvesArea: {
-    position: 'absolute',
-    top: '63%',  // Adjust as needed
-    left: '38%',  // Adjust as needed
-    width: '25%',  // Adjust as needed
-    height: '10%',  // Adjust as needed
-  },
-  roundedRectangle: {
-    width: '60%', // Adjust as needed
-    height: '6%', // Adjust as needed
-    backgroundColor: '#33363F',
-    borderRadius: 15,
-    justifyContent: 'center',
-    padding: 15,
-    marginBottom: 20, // Add some margin at the bottom
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5
-  },
-  text: {
-    color: '#C2CAF2',
-    fontSize: 16,
-    marginBottom: 0,
-    textAlign: 'center',
-  },
-});
-

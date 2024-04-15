@@ -9,18 +9,17 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@react-native-picker/picker": "^2.7.2",
+    "@expo/metro-config": "^0.17.6",
+    "@react-native-picker/picker": "^2.6.1",
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.1.9",
-    "expo": "~50.0.5",
-    "expo-app-loading": "^2.1.1",
-    "expo-image-picker": "~14.7.1",
-    "expo-permissions": "^14.4.0",
+    "expo": "~50.0.14",
+    "metro": "^0.80.8",
+    "react": "^18.2.0",
+    "react-native": "^0.73.6",
+    "uuid": "^9.0.1",
     "expo-splash-screen": "~0.26.4",
-    "expo-status-bar": "~1.11.1",
-    "react": "18.2.0",
-    "react-native": "^0.73.2",
-    "uuid": "^9.0.1"
+    "expo-image-picker": "~14.7.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
