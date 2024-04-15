@@ -454,7 +454,7 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
             <TouchableOpacity style={{ ...styles.closeButton, backgroundColor: "#33363F" }}
               onPress={() => setTipsModalVisible(!tipsModalVisible)}
             >
-              <Text style={styles.buttonTextStyle}>Hide Modal</Text>
+              <Text style={styles.buttonTextStyle}>Close</Text>
             </TouchableOpacity>
           </View>
         </View>

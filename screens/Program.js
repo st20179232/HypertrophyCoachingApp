@@ -30,7 +30,6 @@ useEffect(() => {
     setFrequency(frequency);
     setEquipment(equipment);
   }
-  console.log(`route.params: ${JSON.stringify(route.params)}`);
   if (frequency === 'low') {
     setShowWorkout(true);
     setCurrentView('FullDay');
@@ -86,9 +85,11 @@ useEffect(() => {
 
 return (
   <View style={styles.container}>
-        <Text style={styles.heading}>Workout Program</Text>
+    <Text style={styles.heading}>Workout Program</Text>
     <View style={styles.roundedRectangle}>
-      {showWorkout ? (
+      {frequency === '' ? (
+        <Text style={styles.buttonTextStyle}>Select A Program to Customise</Text>
+      ) : showWorkout ? (
         data.map((item, index) => (
           <View key={index} style={styles.itemContainer}>
             <Text style={styles.text}>{item.Variation}</Text>
@@ -203,7 +204,7 @@ return (
     >
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
-          <Text style={styles.modalText}>Select New Exercise:</Text>
+          <Text style={styles.heading}>Select New Exercise:</Text>
           <Picker
             key={pickerKey}
             selectedValue={selectedExerciseType}
@@ -211,7 +212,7 @@ return (
               setSelectedExerciseType(itemValue);
               setPickerKey(prevKey => prevKey + 1); // Update the pickerKey state
             }}
-            style={{ height: 50, width: 150 }}
+            style={{ height: 50, width: 250, color: '#C2CAF2', fontSize: 16 }} // Add color and fontSize here
           >
             {exercise.map((item, index) => (
               <Picker.Item 
@@ -221,27 +222,29 @@ return (
               />
             ))}
           </Picker>
+          <View style={styles.modalButtonContainer}>
           <TouchableOpacity
-            style={styles.modalButton}
-            onPress={() => {
-              const newData = [...data];
-              if (newData[exerciseToReplaceIndex]) { // Check if the item exists
-                newData[exerciseToReplaceIndex].Variation = selectedExerciseType; // Replace the Variation
-                setData(newData);
-              }
-              setModalVisible(!modalVisible);
-            }}
+              style={styles.modalButton}
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}
             >
-            <Text style={styles.buttonTextStyle}>Confirm</Text>
+              <Text style={styles.buttonTextStyle}>Close</Text>
             </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.modalButton}
-            onPress={() => {
-              setModalVisible(!modalVisible);
-            }}
-          >
-            <Text style={styles.buttonTextStyle}>Close</Text>
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.modalButton}
+              onPress={() => {
+                const newData = [...data];
+                if (newData[exerciseToReplaceIndex]) { // Check if the item exists
+                  newData[exerciseToReplaceIndex].Variation = selectedExerciseType; // Replace the Variation
+                  setData(newData);
+                }
+                setModalVisible(!modalVisible);
+              }}
+            >
+              <Text style={styles.buttonTextStyle}>Confirm</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </Modal>
@@ -321,7 +324,7 @@ const styles = StyleSheet.create({
     margin: 20,
     backgroundColor: "#33363F",
     borderRadius: 20,
-    height: '55%',
+    height: '30%',
     width: '80%',
     padding: 35,
     alignSelf: 'center',
@@ -357,7 +360,7 @@ const styles = StyleSheet.create({
   },
   modalButton: {
     alignSelf: 'center',
-    width: '50%',
+    width: '40%',
     height: 'auto',
     backgroundColor: '#1F2025',
     borderRadius: 20,
@@ -371,5 +374,17 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22
+  },
+  modalButtonContainer: {
+    paddingTop: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
   },
 });

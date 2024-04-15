@@ -7,8 +7,6 @@ const WorkoutPlanBox = ({ navigation }) => {
   const [equipment, setEquipment] = useState('gym');
 
   const handleButtonPress = () => {
-    console.log(`Selected frequency: ${frequency}`);
-    console.log(`Selected equipment: ${equipment}`);
     navigation.navigate('Program', { frequency, equipment });
   };
 

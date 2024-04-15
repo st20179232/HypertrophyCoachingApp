@@ -14,12 +14,13 @@
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.1.9",
     "expo": "~50.0.14",
+    "expo-image-picker": "~14.7.1",
+    "expo-splash-screen": "~0.26.4",
     "metro": "^0.80.8",
     "react": "^18.2.0",
     "react-native": "^0.73.6",
-    "uuid": "^9.0.1",
-    "expo-splash-screen": "~0.26.4",
-    "expo-image-picker": "~14.7.1"
+    "react-native-progress": "^5.0.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
