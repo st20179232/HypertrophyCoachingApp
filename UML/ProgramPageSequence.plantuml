@@ -1,0 +1,45 @@
+@startuml
+actor User
+participant Program
+participant "useEffect\n(Hook)" as useEffectHook
+participant "Picker\n(Exercise)" as ExercisePicker
+participant "Modal\n(Exercise Selector)" as ExerciseModal
+participant "TouchableOpacity\n(Exercise)" as ExerciseButton
+participant "TouchableOpacity\n(Back Button)" as BackButton
+participant "TouchableOpacity\n(Training Day)" as TrainingDayButton
+
+User -> Program: Opens Program Screen
+activate Program
+Program -> useEffectHook: Runs with route.params
+activate useEffectHook
+useEffectHook -> Program: Updates frequency and equipment states
+deactivate useEffectHook
+
+alt frequency is 'low'
+    User -> ExerciseButton: Clicks on an exercise
+    ExerciseButton -> Program: Calls handleExercisePress()
+    Program -> ExerciseModal: Opens with selected exercise
+    activate ExerciseModal
+    User -> ExercisePicker: Selects new exercise
+    ExercisePicker -> Program: Updates selectedExerciseType state
+    User -> ExerciseModal: Confirms new exercise
+    ExerciseModal -> Program: Updates data state with new exercise
+    deactivate ExerciseModal
+else frequency is 'medium' or 'high'
+    User -> TrainingDayButton: Clicks on a training day
+    TrainingDayButton -> Program: Calls handleTrainingDayPress()
+    Program -> Program: Sets showWorkout to true and data to selected training day exercises
+    User -> ExerciseButton: Clicks on an exercise
+    ExerciseButton -> Program: Calls handleExercisePress()
+    Program -> ExerciseModal: Opens with selected exercise
+    activate ExerciseModal
+    User -> ExercisePicker: Selects new exercise
+    ExercisePicker -> Program: Updates selectedExerciseType state
+    User -> ExerciseModal: Confirms new exercise
+    ExerciseModal -> Program: Updates data state with new exercise
+    deactivate ExerciseModal
+end
+
+User -> BackButton: Clicks to go back
+BackButton -> Program: Resets navigation with frequency and equipment parameters
+@enduml

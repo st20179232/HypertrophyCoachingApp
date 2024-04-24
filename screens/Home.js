@@ -1,16 +1,18 @@
+// Import necessary libraries and components
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
+// Defining variables and functions for the WorkoutPlanBox component
 const WorkoutPlanBox = ({ navigation }) => {
   const [frequency, setFrequency] = useState('low');
   const [equipment, setEquipment] = useState('gym');
-
-  const handleButtonPress = () => {
+  // Function to navigate to the Program screen with the selected frequency and equipment
+  const handleButtonPress = () => { 
     navigation.navigate('Program', { frequency, equipment });
   };
 
-
+// Returns the WorkoutPlanBox component with a heading, frequency and equipment selection, and a button to navigate to the Program screen
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Build Base Program</Text>
@@ -46,11 +48,11 @@ const WorkoutPlanBox = ({ navigation }) => {
     </View>
   );
 }
-
+// Styles for the WorkoutPlanBox component
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1F2025', // Your default background color
+    backgroundColor: '#1F2025', 
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -61,13 +63,13 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   roundedRectangle: {
-    width: '70%', // Adjust as needed
-    height: '13%', // Adjust as needed
+    width: '70%', 
+    height: '13%', 
     backgroundColor: '#33363F',
     borderRadius: 20,
     justifyContent: 'center',
     padding: 15,
-    marginBottom: 20, // Add some margin at the bottom
+    marginBottom: 20, 
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -106,5 +108,5 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
 });
-
+// Export the WorkoutPlanBox component to be used in the App.js file
 export default WorkoutPlanBox;

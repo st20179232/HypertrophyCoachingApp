@@ -1,3 +1,4 @@
+// Import necessary libraries
 import React, { useEffect, useState } from 'react';
 import { TouchableOpacity, View, Text, StyleSheet, Modal, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -9,7 +10,7 @@ import pushday from '../dbdump/pushday.json';
 import pullday from '../dbdump/pullday.json';
 import exercise from '../dbdump/exercise.json';
 
-
+// Define variables and functions for the Program screen
 export default function Program({ route }) {
   const [data, setData] = useState([]);
   const [frequency, setFrequency] = useState('');  
@@ -22,6 +23,7 @@ export default function Program({ route }) {
   const [exerciseToReplaceIndex, setExerciseToReplaceIndex] = useState(0);
   const [pickerKey, setPickerKey] = useState(0);
 
+// Use the useEffect hook to update frequency and equipment data for program customization
 useEffect(() => {
   let frequency, equipment;
   if (route.params) {
@@ -30,6 +32,7 @@ useEffect(() => {
     setFrequency(frequency);
     setEquipment(equipment);
   }
+  // If frequency is low, select program based on equipment by taking a slice of the workout data json file
   if (frequency === 'low') {
     setShowWorkout(true);
     setCurrentView('FullDay');
@@ -40,7 +43,8 @@ useEffect(() => {
     } else if (equipment === 'band') {
       setData(fullday.slice(12, 18));
     }
-  } else if (frequency === 'medium') {
+  } // If frequency is medium or high, select program based on equipment by taking a slice of whatever json file corresponds to the workout selected
+  else if (frequency === 'medium') {
     setShowWorkout(false);
     if (equipment === 'gym') {
       setData([
@@ -82,18 +86,18 @@ useEffect(() => {
     }
 }, [route.params]);
 
-
+// Return the Program screen with the workout program and the ability to customize the program
 return (
   <View style={styles.container}>
     <Text style={styles.heading}>Workout Program</Text>
     <View style={styles.roundedRectangle}>
-      {frequency === '' ? (
+      {frequency === '' ? ( // If frequency is not selected, display the following text
         <Text style={styles.buttonTextStyle}>Select A Program to Customise</Text>
-      ) : showWorkout ? (
+      ) : showWorkout ? ( // If showWorkout is true, display the workout program
         data.map((item, index) => (
           <View key={index} style={styles.itemContainer}>
             <Text style={styles.text}>{item.Variation}</Text>
-            <TouchableOpacity style={styles.smallbutton} onPress={() => {
+            <TouchableOpacity style={styles.smallbutton} onPress={() => { // Add an onPress event to the smallbutton that is used to replace exercises
               setModalVisible(true);
               setExerciseToReplaceIndex(index);
               setSelectedExerciseType(`${data[exerciseToReplaceIndex].Variation}-${Date.now()}`);
@@ -103,13 +107,13 @@ return (
           </View>
         ))
       ) : (
-        data.map((item, index) => (
+        data.map((item, index) => ( // If showWorkout is false, display the workout variations for non-full day workouts
           <TouchableOpacity
             key={index}
             style={styles.buttons}
             onPress={() => {
               setShowWorkout(true);
-              // Set the data state to the corresponding slice of the workout data
+              // Set the data state to the corresponding slice of the workout data when the workout variation is selected
               switch (item.Variation) {
                 case 'Upper':
                   switch (equipment) {
@@ -181,7 +185,7 @@ return (
           </TouchableOpacity>
         ))
       )}
-      {showWorkout && currentView !== 'FullDay' && (
+      {showWorkout && currentView !== 'FullDay' && ( // Hides the back button if the current view is FullDay because there is no need to go back
         <TouchableOpacity
           style={styles.backButton}
           onPress={() => {
@@ -194,7 +198,7 @@ return (
           <Text style={[styles.buttonTextStyle, styles.buttons]}>Back</Text>
         </TouchableOpacity>
       )}
-      <Modal
+      <Modal // Add a modal to select a new exercise
       animationType="slide"
       transparent={true}
       visible={modalVisible}
@@ -205,20 +209,20 @@ return (
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
           <Text style={styles.heading}>Select New Exercise:</Text>
-          <Picker
+          <Picker // Add a picker to select a new exercise
             key={pickerKey}
             selectedValue={selectedExerciseType}
             onValueChange={(itemValue, itemIndex) => {
               setSelectedExerciseType(itemValue);
-              setPickerKey(prevKey => prevKey + 1); // Update the pickerKey state
+              setPickerKey(prevKey => prevKey + 1);  // Update the key to force a re-render
             }}
-            style={{ height: 50, width: 250, color: '#C2CAF2', fontSize: 16 }} // Add color and fontSize here
+            style={{ height: 50, width: 250, color: '#C2CAF2', fontSize: 16 }}
           >
             {exercise.map((item, index) => (
-              <Picker.Item 
+              <Picker.Item // Add a picker item for each exercise
                 key={index} 
                 label={`${item.ExerciseType}, ${item.EquipmentType}, ${item.Variation}`} 
-                value={item.Variation} // Set the value to item.Variation
+                value={item.Variation} 
               />
             ))}
           </Picker>
@@ -227,16 +231,16 @@ return (
               style={styles.modalButton}
               onPress={() => {
                 setModalVisible(!modalVisible);
-              }}
+              }} // Add an onPress event to close the modal
             >
               <Text style={styles.buttonTextStyle}>Close</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.modalButton}
-              onPress={() => {
+              onPress={() => { // Add an onPress event to confirm the new exercise
                 const newData = [...data];
-                if (newData[exerciseToReplaceIndex]) { // Check if the item exists
-                  newData[exerciseToReplaceIndex].Variation = selectedExerciseType; // Replace the Variation
+                if (newData[exerciseToReplaceIndex]) { 
+                  newData[exerciseToReplaceIndex].Variation = selectedExerciseType; 
                   setData(newData);
                 }
                 setModalVisible(!modalVisible);
@@ -252,7 +256,7 @@ return (
   </View>
 );
 }
-
+// Styles for the Program screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -293,9 +297,9 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     borderRadius: 10,
-    flexDirection: 'row', // Add this line
-    justifyContent: 'space-between', // Add this line
-    alignItems: 'center', // Add this line
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
   },
   buttons: {
     alignSelf: 'center',
@@ -345,7 +349,7 @@ const styles = StyleSheet.create({
     color: '#C2CAF2',
   },
   smallbutton: {
-    alignSelf: 'flex-end', // Change 'right' to 'flex-end'
+    alignSelf: 'flex-end', 
     width: 50,
     height: 20,
     backgroundColor: '#1F2025',

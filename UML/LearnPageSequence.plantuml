@@ -1,0 +1,28 @@
+@startuml
+actor User
+participant Learn
+participant "Modal\n(Muscle Info)" as MuscleModal
+participant "Modal\n(Training Tips)" as TipsModal
+participant "TouchableOpacity\n(Muscle Area)" as MuscleArea
+participant "TouchableOpacity\n(Flip Button)" as FlipButton
+participant "TouchableOpacity\n(Tips Button)" as TipsButton
+
+User -> Learn: Opens Learn Screen
+activate Learn
+Learn -> MuscleModal: Creates modals for each muscle group
+activate MuscleModal
+Learn -> TipsModal: Creates modal for training tips
+activate TipsModal
+Learn -> MuscleArea: Creates clickable areas for each muscle group
+activate MuscleArea
+Learn -> FlipButton: Creates button to flip muscle image
+activate FlipButton
+Learn -> TipsButton: Creates button to display training tips
+activate TipsButton
+User -> MuscleArea: Clicks on a muscle area
+MuscleArea -> MuscleModal: Opens corresponding muscle modal
+User -> FlipButton: Clicks to flip muscle image
+FlipButton -> Learn: Flips muscle image
+User -> TipsButton: Clicks to display training tips
+TipsButton -> TipsModal: Opens training tips modal
+@enduml

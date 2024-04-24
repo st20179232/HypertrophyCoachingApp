@@ -1,3 +1,4 @@
+// Importing the necessary components
 import React from 'react';
 import { Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -6,7 +7,7 @@ import Program from './Program';
 import Learn from './Learn';
 import Account from './Account';
 
-// Import your icons
+// Import icons for the bottom tab navigator
 import HomeIcon from '../assets/Home.png';
 import ProgramIcon from '../assets/Program.png';
 import LearnIcon from '../assets/Learn.png';
@@ -16,8 +17,10 @@ import programSelected from '../assets/ProgramS.png';
 import learnSelected from '../assets/LearnS.png';
 import accountSelected from '../assets/ProfileS.png';
 
+// Create the bottom tab navigator 
 const Tab = createBottomTabNavigator();
 
+// Returns the bottom tab navigator with the Home, Program, Learn, and Account screens
 export default function NavBar() {
   return (
     <Tab.Navigator
@@ -35,9 +38,9 @@ export default function NavBar() {
             icon = focused ? accountSelected : AccountIcon;
           }
 
-          // You can return any component that you like here!
+          // Returns the specific icon for the tab
           return <Image source={icon} style={{ width: 50, height: 50 }} />;
-        },
+        },// Tab bar styling
         tabBarShowLabel: false,
         tabBarStyle: {
           display: 'flex',
@@ -52,8 +55,8 @@ export default function NavBar() {
           borderTopLeftRadius: 15,
           borderTopRightRadius: 15,
         },
-      })}
-    >
+      })} 
+    > 
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Program" component={Program} />
       <Tab.Screen name="Learn" component={Learn} />

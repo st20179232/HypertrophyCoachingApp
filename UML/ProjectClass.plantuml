@@ -1,0 +1,181 @@
+@startuml
+class WorkoutPlanBox {
+  -frequency: string
+  -equipment: string
+  +setFrequency(frequency: string): void
+  +setEquipment(equipment: string): void
+  +handleButtonPress(): void
+}
+
+class Program {
+  -data: array
+  -frequency: string
+  -equipment: string
+  -showWorkout: boolean
+  -currentView: string
+  -modalVisible: boolean
+  -selectedExerciseType: string
+  -exerciseToReplaceIndex: number
+  -pickerKey: number
+  +useEffect(): void
+  +return(): JSX.Element
+}
+
+class Learn {
+  -isFront: boolean
+  -chestModalVisible: boolean
+  -absModalVisible: boolean
+  -deltModalVisible: boolean
+  -bicepModalVisible: boolean
+  -forearmModalVisible: boolean
+  -quadsModalVisible: boolean
+  -calvesModalVisible: boolean
+  -upperBackModalVisible: boolean
+  -latsModalVisible: boolean
+  -glutesModalVisible: boolean
+  -hamstringsModalVisible: boolean
+  -tricepsModalVisible: boolean
+  -tipsModalVisible: boolean
+  +flipImage(): void
+  +handleChestClick(): void
+  +handleDeltClick(): void
+  +handleBicepClick(): void
+  +handleForearmClick(): void
+  +handleAbsClick(): void
+  +handleQuadsClick(): void
+  +handleCalvesClick(): void
+  +handleUpperBackClick(): void
+  +handleLatsClick(): void
+  +handleGlutesClick(): void
+  +handleHamstringsClick(): void
+  +handleTricepClick(): void
+}
+
+class Account {
+  -image: string
+  -name: string
+  -dob: string
+  -height: string
+  -weight: string
+  +selectImage(): void
+}
+
+class NavBar {
+  -HomeIcon: Image
+  -ProgramIcon: Image
+  -LearnIcon: Image
+  -AccountIcon: Image
+  -homeSelected: Image
+  -programSelected: Image
+  -learnSelected: Image
+  -accountSelected: Image
+}
+
+class Styles {
+  -container: object
+  -defaultFont: object
+}
+
+class View {
+  -style: object
+}
+
+class Text {
+  -style: object
+}
+
+class TouchableOpacity {
+  -style: object
+  -onPress: function
+}
+
+class Picker {
+  -selectedValue: string
+  -onValueChange: function
+  -style: object
+}
+
+class PickerItem {
+  -label: string
+  -value: string
+}
+
+class Modal {
+  -animationType: string
+  -transparent: boolean
+  -visible: boolean
+  -onRequestClose: function
+}
+
+class Image {
+  -source: object
+  -style: object
+}
+
+class TextInput {
+  -style: object
+  -value: string
+  -onChangeText: function
+  -placeholder: string
+  -placeholderTextColor: string
+}
+
+class StyleSheet {
+  +create(style: object): object
+}
+
+class Tab {
+  +Navigator(): object
+  +Screen(name: string, component: object): object
+}
+
+class Home {
+}
+
+class Program {
+}
+
+class Learn {
+}
+
+class Account {
+}
+
+WorkoutPlanBox "1" -- "1" View: contains
+WorkoutPlanBox "1" -- "*" Text: contains
+WorkoutPlanBox "1" -- "1" Picker: contains
+Picker "1" -- "*" PickerItem: contains
+WorkoutPlanBox "1" -- "1" TouchableOpacity: contains
+WorkoutPlanBox ..> StyleSheet: <<use>>
+
+Program "1" -- "1" Modal: contains
+Program "1" -- "1" Picker: contains
+Picker "1" -- "*" PickerItem: contains
+Program "1" -- "*" TouchableOpacity: contains
+Program "1" -- "*" View: contains
+Program "1" -- "*" Text: contains
+Program ..> StyleSheet: <<use>>
+
+Learn "1" -- "1" Modal: contains
+Learn "1" -- "*" TouchableOpacity: contains
+Learn "1" -- "*" View: contains
+Learn "1" -- "*" Text: contains
+Learn "1" -- "*" Image: contains
+Learn ..> StyleSheet: <<use>>
+
+Account "1" -- "1" TouchableOpacity: contains
+Account "1" -- "1" Image: contains
+Account "1" -- "*" TextInput: contains
+Account "1" -- "*" View: contains
+Account ..> StyleSheet: <<use>>
+
+NavBar "1" -- "1" Tab: contains
+NavBar "1" -- "*" Image: contains
+Tab "1" -- "1" Home: contains
+Tab "1" -- "1" Program: contains
+Tab "1" -- "1" Learn: contains
+Tab "1" -- "1" Account: contains
+
+Styles ..> StyleSheet: <<use>>
+
+@enduml

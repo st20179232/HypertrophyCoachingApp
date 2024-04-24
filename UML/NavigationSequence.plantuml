@@ -1,0 +1,28 @@
+@startuml
+actor User
+participant NavBar
+participant "Tab.Navigator" as TabNavigator
+participant HomeScreen
+participant ProgramScreen
+participant LearnScreen
+participant AccountScreen
+
+User -> NavBar: Opens App
+activate NavBar
+NavBar -> TabNavigator: Creates with Home, Program, Learn, Account tabs
+activate TabNavigator
+TabNavigator -> HomeScreen: Displays as default tab
+activate HomeScreen
+User -> TabNavigator: Selects Program tab
+TabNavigator -> ProgramScreen: Displays Program screen
+deactivate HomeScreen
+activate ProgramScreen
+User -> TabNavigator: Selects Learn tab
+TabNavigator -> LearnScreen: Displays Learn screen
+deactivate ProgramScreen
+activate LearnScreen
+User -> TabNavigator: Selects Account tab
+TabNavigator -> AccountScreen: Displays Account screen
+deactivate LearnScreen
+activate AccountScreen
+@enduml

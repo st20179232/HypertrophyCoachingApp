@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+// Importing necessary libraries and components
+import React, { useState } from 'react';
 import { View, Image, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
 import styles from './styles';
 import * as ImagePicker from 'expo-image-picker';
-
 import dobIcon from '../assets/dob.png';
 import heightIcon from '../assets/height.png';
 import weightIcon from '../assets/weight.png';
 
+// Defining variables and functions for the Account screen
 export default function Account() {
   const [image, setImage] = useState(null);
   const [name, setName] = useState('');
@@ -14,10 +15,7 @@ export default function Account() {
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
 
-  useEffect(() => {
-    console.log(image);
-  }, [image]);
-
+// Image picker function asks for permission to access the camera roll 
   const selectImage = async () => {
     const { status } = await ImagePicker.getMediaLibraryPermissionsAsync();
     if (status !== 'granted') {
@@ -27,6 +25,7 @@ export default function Account() {
         return;
       }
     }
+// Launches the image picker and allows the user to select an image from their camera roll
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
@@ -34,27 +33,28 @@ export default function Account() {
       quality: 1,
     });
 
-    console.log(result);
-
+// If the user cancels the image picker, the function will return
     if (!result.cancelled) {
       setImage(result.assets[0].uri);
     }
   }
 
+// Returns the Account screen with the image picker, text input for name, and icons for dob, height, and weight
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={selectImage} style={newStyles.imageContainer}>
         {image && <Image source={{ uri: image }} style={newStyles.image} />}
       </TouchableOpacity>
-      <TextInput
+      <TextInput 
         style={[styles.defaultFont, newStyles.textInput]}
         value={name}
         onChangeText={setName}
         placeholder="Enter your name"
-        placeholderTextColor="#888"
+        placeholderTextColor="#888" 
       />
-      <View style={newStyles.iconList}>
-        <View style={newStyles.iconInputContainer}>
+
+      <View style={newStyles.iconList}> 
+        <View style={newStyles.iconInputContainer}> 
           <Image source={dobIcon} style={newStyles.icon} />
           <TextInput
             style={[styles.defaultFont, newStyles.listTextInput]}
@@ -88,7 +88,7 @@ export default function Account() {
     </View>
   );
 }
-
+// Styles for the Account screen
 const newStyles = StyleSheet.create({
   container: {
     flex: 1,

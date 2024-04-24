@@ -1,0 +1,26 @@
+@startuml
+actor User
+participant WorkoutPlanBox
+participant "Picker\n(Frequency)" as FrequencyPicker
+participant "Picker\n(Equipment)" as EquipmentPicker
+participant "TouchableOpacity\n(Button)" as Button
+participant ProgramScreen
+
+User -> WorkoutPlanBox: Opens Home Screen
+activate WorkoutPlanBox
+WorkoutPlanBox -> FrequencyPicker: Displays with default value 'low'
+activate FrequencyPicker
+WorkoutPlanBox -> EquipmentPicker: Displays with default value 'gym'
+activate EquipmentPicker
+WorkoutPlanBox -> Button: Displays 'Select Plan and Customise' button
+activate Button
+User -> FrequencyPicker: Selects frequency
+FrequencyPicker -> WorkoutPlanBox: Updates frequency state
+User -> EquipmentPicker: Selects equipment
+EquipmentPicker -> WorkoutPlanBox: Updates equipment state
+User -> Button: Presses button
+Button -> WorkoutPlanBox: Calls handleButtonPress()
+WorkoutPlanBox -> ProgramScreen: Navigates with frequency and equipment parameters
+deactivate WorkoutPlanBox
+activate ProgramScreen
+@enduml

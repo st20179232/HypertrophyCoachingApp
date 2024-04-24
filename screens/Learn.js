@@ -1,6 +1,6 @@
+// Import necessary libraries
 import React, { useState } from 'react';
 import { View, Image, TouchableOpacity, StyleSheet, Modal, Text, FlatList } from 'react-native';
-
 import muscleFront from '../assets/muscleFront.png';
 import muscleBack from '../assets/muscleBack.png';
 import flipButton from '../assets/flipButton.png';
@@ -17,7 +17,7 @@ import glutesImage from '../assets/muscleGlutes.png';
 import hamstringsImage from '../assets/muscleHamstrings.png';
 import tricepsImage from '../assets/muscleTriceps.png';
 
-
+// Define variables and functions for the Learn screen
 export default function Learn() {
   const [isFront, setIsFront] = useState(true);
   const [chestModalVisible, setChestModalVisible] = useState(false);
@@ -32,10 +32,9 @@ export default function Learn() {
   const [glutesModalVisible, setGlutesModalVisible] = useState(false);
   const [hamstringsModalVisible, setHamstringsModalVisible] = useState(false);
   const [tricepsModalVisible, setTricepsModalVisible] = useState(false);
-
   const [tipsModalVisible, setTipsModalVisible] = useState(false);
  
-
+// Functions to flip the image and display muscle information
   const flipImage = () => {
     setIsFront(!isFront);
   };
@@ -87,7 +86,7 @@ export default function Learn() {
   const handleTricepClick = () => {
     setTricepsModalVisible(true);
   }
-
+// Array of training tips to display in the modal
 const trainingTips = ['1) Make sure you are pushing your sets near failure', 
                       '2) Make sure you rest at least 2 minutes between sets, and longer for more challenging exercises',
                       '3) Play around with your rep ranges to see what you enjoy, anywhere between 5 and 20 reps is recommended',
@@ -96,7 +95,7 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
                       '6) Make sure you are eating enough calories and protein to reach your goals'
                       ];
 
-
+// Styles for the Learn screen
   const styles = StyleSheet.create({
     centeredView: {
       flex: 1,
@@ -155,14 +154,14 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
     backgroundColor: '#1F2025'
   },
   chart: {
-    width: '65%',  // Adjust as needed
-    height: '65%',  // Adjust as needed
-    marginBottom: 30,  // Add some margin at the bottom
+    width: '65%',  
+    height: '65%',  
+    marginBottom: 30,  
   },
   flipButtonContainer: {
     position: 'absolute',
-    top: '5%',  // Adjust as needed
-    right: '5%',  // Adjust as needed
+    top: '5%',  
+    right: '5%',  
   },
   flipButton: {
     height: 65,
@@ -170,124 +169,124 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
   },
   chestArea: {
     position: 'absolute',
-    top: '23%',  // Adjust as needed
-    left: '39%',  // Adjust as needed
-    width: '22%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
+    top: '23%',  
+    left: '39%',  
+    width: '22%',  
+    height: '6%',  
   },
   deltArea1: {
     position: 'absolute',
-    top: '22%',  // Adjust as needed
-    left: '30%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '5%',  // Adjust as needed
+    top: '22%',  
+    left: '30%',  
+    width: '9%',  
+    height: '5%',  
   },
   deltArea2: {
     position: 'absolute',
-    top: '22%',  // Adjust as needed
-    left: '60%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '5%',  // Adjust as needed
+    top: '22%',  
+    left: '60%',  
+    width: '9%',  
+    height: '5%',  
   },
   bicepArea1: {
     position: 'absolute',
-    top: '27%',  // Adjust as needed
-    left: '28%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed 
+    top: '27%',  
+    left: '28%',  
+    width: '9%',  
+    height: '6%',   
   },
   bicepArea2: {
     position: 'absolute',
-    top: '27%',  // Adjust as needed
-    left: '62%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
+    top: '27%',  
+    left: '62%',  
+    width: '9%',  
+    height: '6%',  
   },
   forearmArea1: {
     position: 'absolute',
-    top: '33%',  // Adjust as needed
-    left: '24%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
+    top: '33%',  
+    left: '24%',  
+    width: '9%',  
+    height: '6%',  
   },
   forearmArea2: {
     position: 'absolute',
-    top: '33%',  // Adjust as needed
-    left: '67%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
+    top: '33%',  
+    left: '67%',  
+    width: '9%',  
+    height: '6%',  
   },
   absArea: {
     position: 'absolute',
-    top: '29%',  // Adjust as needed
-    left: '41%',  // Adjust as needed
-    width: '18%',  // Adjust as needed
-    height: '10%',  // Adjust as needed
+    top: '29%',  
+    left: '41%',  
+    width: '18%',  
+    height: '10%',  
   },
   quadsArea: {
     position: 'absolute',
-    top: '42%',  // Adjust as needed
-    left: '36%',  // Adjust as needed
-    width: '28%',  // Adjust as needed
-    height: '13%',  // Adjust as needed
+    top: '42%',  
+    left: '36%',  
+    width: '28%',  
+    height: '13%',  
   },
   upperBackArea: {
     position: 'absolute',
-    top: '21%',  // Adjust as needed
-    left: '39%',  // Adjust as needed
-    width: '23%',  // Adjust as needed
-    height: '8%',  // Adjust as needed
+    top: '21%',  
+    left: '39%',  
+    width: '23%',  
+    height: '8%',  
   },
   latsArea: {
     position: 'absolute',
-    top: '29%',  // Adjust as needed
-    left: '38%',  // Adjust as needed
-    width: '25%',  // Adjust as needed
-    height: '9%',  // Adjust as needed
+    top: '29%',  
+    left: '38%',  
+    width: '25%',  
+    height: '9%',  
   },
   tricepArea1: {
     position: 'absolute',
-    top: '28%',  // Adjust as needed
-    left: '28%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
+    top: '28%',  
+    left: '28%',  
+    width: '9%',  
+    height: '6%',  
   },
   tricepArea2: {
     position: 'absolute',
-    top: '28%',  // Adjust as needed
-    left: '63%',  // Adjust as needed
-    width: '9%',  // Adjust as needed
-    height: '6%',  // Adjust as needed
+    top: '28%',  
+    left: '63%',  
+    width: '9%',  
+    height: '6%',  
   },
   glutesArea: {
     position: 'absolute',
-    top: '39%',  // Adjust as needed
-    left: '38%',  // Adjust as needed
-    width: '25%',  // Adjust as needed
-    height: '8%',  // Adjust as needed
+    top: '39%',  
+    left: '38%',  
+    width: '25%',  
+    height: '8%',  
   },
   hamstringsArea: {
     position: 'absolute',
-    top: '47%',  // Adjust as needed
-    left: '38%',  // Adjust as needed
-    width: '25%',  // Adjust as needed
-    height: '10%',  // Adjust as needed
+    top: '47%',  
+    left: '38%',  
+    width: '25%',  
+    height: '10%',  
   },
   calvesArea: {
     position: 'absolute',
-    top: '58%',  // Adjust as needed
-    left: '38%',  // Adjust as needed
-    width: '25%',  // Adjust as needed
-    height: '10%',  // Adjust as needed
+    top: '58%',  
+    left: '38%',  
+    width: '25%',  
+    height: '10%',  
   },
   roundedRectangle: {
-    width: '60%', // Adjust as needed
-    height: '6%', // Adjust as needed
+    width: '60%', 
+    height: '6%', 
     backgroundColor: '#33363F',
     borderRadius: 15,
     justifyContent: 'center',
     padding: 15,
-    marginBottom: 20, // Add some margin at the bottom
+    marginBottom: 20, 
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -305,6 +304,7 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
   },
 });
   
+// Function to display muscle information in a modal with an image and text
   function MuscleModal({modalVisible, setModalVisible, muscleName, muscleInfo, imageUri}) {
     return (
       <Modal
@@ -314,8 +314,8 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
         onRequestClose={() => {
           setModalVisible(false);
         }}
-      >
-        <View style={styles.centeredView}>
+      > 
+        <View style={styles.centeredView}> 
           <View style={styles.modalView}>
             <Text style={styles.modalText}>{muscleName}</Text>
             <Image style={styles.modalImageStyle} source={imageUri}/>
@@ -332,7 +332,7 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
       </Modal>
     );
   }
-
+// Array of muscle objects with information to display in the modal
   const muscle = [
     {
       modalVisible: chestModalVisible,
@@ -420,7 +420,7 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
     },
 
   ];
-
+// Return the Learn screen with the muscle chart and clickable areas
   return (
     <View style={styles.container}>
       {muscle.map((muscle) => (
@@ -434,7 +434,7 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
         />
       ))}
   
-      <Modal
+      <Modal // Modal to display training tips 
         animationType="slide"
         transparent={true}
         visible={tipsModalVisible}
@@ -444,7 +444,7 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <FlatList
+            <FlatList // FlatList to get the training tips from the array
               data={trainingTips}
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) => (
@@ -459,9 +459,9 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
           </View>
         </View>
       </Modal>
-  
+             
       <Image source={isFront ? muscleFront : muscleBack} style={styles.chart} />
-      {isFront && (
+      {isFront && ( // Display clickable areas on the front of the body
         <>
           <TouchableOpacity style={styles.chestArea} onPress={handleChestClick} />
           <TouchableOpacity style={styles.bicepArea1} onPress={handleBicepClick} />
@@ -470,7 +470,7 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
           <TouchableOpacity style={styles.quadsArea} onPress={handleQuadsClick} />
         </>
       )}
-      {!isFront && (
+      {!isFront && ( // Display clickable areas on the back of the body
         <>
           <TouchableOpacity style={styles.upperBackArea} onPress={handleUpperBackClick} />
           <TouchableOpacity style={styles.tricepArea1} onPress={handleTricepClick} />
@@ -479,8 +479,9 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
           <TouchableOpacity style={styles.glutesArea} onPress={handleGlutesClick} />
           <TouchableOpacity style={styles.hamstringsArea} onPress={handleHamstringsClick} />
         </>
-      )}
-      <TouchableOpacity style={styles.flipButtonContainer} onPress={flipImage}>
+      )} 
+      <TouchableOpacity // Button to flip the image
+      style={styles.flipButtonContainer} onPress={flipImage}>
         <Image source={flipButton} style={styles.flipButton} />
       </TouchableOpacity>
       <TouchableOpacity style={styles.deltArea1} onPress={handleDeltClick} />
@@ -488,9 +489,10 @@ const trainingTips = ['1) Make sure you are pushing your sets near failure',
       <TouchableOpacity style={styles.forearmArea1} onPress={handleForearmClick} />
       <TouchableOpacity style={styles.forearmArea2} onPress={handleForearmClick} />
       <TouchableOpacity style={styles.calvesArea} onPress={handleCalvesClick} />
-  
-      <View style={styles.roundedRectangle}>
-        <TouchableOpacity onPress={() => setTipsModalVisible(true)}>
+      
+      <View style={styles.roundedRectangle}> 
+        <TouchableOpacity // Button to display training tips
+        onPress={() => setTipsModalVisible(true)}> 
           <Text style={styles.buttonTextStyle}>Top Training Tips</Text>
         </TouchableOpacity>
       </View>

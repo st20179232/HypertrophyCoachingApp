@@ -1,0 +1,35 @@
+@startuml
+actor User
+participant Account
+participant "TouchableOpacity\n(Image Picker)" as ImagePicker
+participant "TextInput\n(Name)" as NameInput
+participant "TextInput\n(DOB)" as DobInput
+participant "TextInput\n(Height)" as HeightInput
+participant "TextInput\n(Weight)" as WeightInput
+
+User -> Account: Opens Account Screen
+activate Account
+Account -> ImagePicker: Displays with default image
+activate ImagePicker
+Account -> NameInput: Displays with empty value
+activate NameInput
+Account -> DobInput: Displays with empty value
+activate DobInput
+Account -> HeightInput: Displays with empty value
+activate HeightInput
+Account -> WeightInput: Displays with empty value
+activate WeightInput
+User -> ImagePicker: Presses to select image
+ImagePicker -> Account: Calls selectImage()
+Account -> ImagePicker: Opens image library
+User -> ImagePicker: Selects image
+ImagePicker -> Account: Updates image state
+User -> NameInput: Enters name
+NameInput -> Account: Updates name state
+User -> DobInput: Enters date of birth
+DobInput -> Account: Updates dob state
+User -> HeightInput: Enters height
+HeightInput -> Account: Updates height state
+User -> WeightInput: Enters weight
+WeightInput -> Account: Updates weight state
+@enduml
